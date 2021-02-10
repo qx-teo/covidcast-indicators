@@ -430,6 +430,7 @@ create_derivative_columns <- function(df) {
 #'
 #' @importFrom dplyr recode
 #' @importFrom parallel mcmapply
+#' @importFrom readr write_csv
 #'
 #' @return list of data frame of individual response data with newly mapped column
 remap_response <- function(df, col_var, map_old_new, default=NULL, response_type="b") {
@@ -444,7 +445,7 @@ remap_response <- function(df, col_var, map_old_new, default=NULL, response_type
     msg_plain(paste0("Mapping response codes for ", col_var, " to meaningful strings..."))
     
     split_col <- split_options(df[[col_var]])
-    if (col_var == "ms_comorbidities") {
+    if (col_var == "C1") {
       msg_plain("Creating binary columns for subset of comorbidities")
       df$b_heart_disease <- as.numeric(is_selected(split_col, "3"))
       df$b_cancer <- as.numeric(is_selected(split_col, "2"))
@@ -452,6 +453,8 @@ remap_response <- function(df, col_var, map_old_new, default=NULL, response_type
       df$b_chronic_lung_disease <- as.numeric(is_selected(split_col, "6"))
       df$b_diabetes <- as.numeric(is_selected(split_col, "12") | is_selected(split_col, "10"))
       df$b_immunocompromised <- as.numeric(is_selected(split_col, "11"))
+      
+      write_csv(df, file.path(params$export_dir, "compare_binary_comorbidities.csv"))
     }
     
     df[[col_var]] <- mcmapply(split_col, FUN=function(row) {
