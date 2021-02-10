@@ -328,18 +328,27 @@ remap_responses <- function(df) {
 #' @param df Data frame of individual response data.
 #' 
 #' @return data frame of individual response data with newly derived columns
+#' 
+#' @importFrom dplyr case_when
 create_derivative_columns <- function(df) {
   # Make derivative columns.	
-  
-  if ( !("D11" %in% names(df)) ) {	
-    df$D11 <- NA_real_
+  if ("D11" %in% names(df)) {
+    df$D11 <- case_when(
+      df$D11 == 1 ~ 1,
+      df$D11 == 2 ~ 0,
+      TRUE ~ NA_real_
+    )
   }
-  if ( !("mc_pregnant" %in% names(df)) ) {	
-    df$mc_pregnant <- NA_real_
+  if ("mc_pregnant" %in% names(df)) {
+    df$b_pregnant <- case_when(
+      df$mc_pregnant == 1 ~ 1,
+      df$mc_pregnant == 2 ~ 0,
+      TRUE ~ NA_real_
+    )
   }
-  
-  df$b_any_comorbidity <- (
-    df$D11 == 1 | df$mc_pregnant == 1 | df$b_heart_disease == 1 | 
+
+  df$b_any_comorbidity <- as.numeric(
+    df$b_heart_disease == 1 | 
       df$b_cancer == 1 | df$b_chronic_kidney_disease == 1 | 
       df$b_chronic_lung_disease == 1 | df$b_diabetes == 1 | 
       df$b_immunocompromised == 1  
@@ -453,8 +462,6 @@ remap_response <- function(df, col_var, map_old_new, default=NULL, response_type
       df$b_chronic_lung_disease <- as.numeric(is_selected(split_col, "6"))
       df$b_diabetes <- as.numeric(is_selected(split_col, "12") | is_selected(split_col, "10"))
       df$b_immunocompromised <- as.numeric(is_selected(split_col, "11"))
-      
-      write_csv(df, file.path(params$export_dir, "compare_binary_comorbidities.csv"))
     }
     
     df[[col_var]] <- mcmapply(split_col, FUN=function(row) {
