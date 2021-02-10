@@ -107,6 +107,8 @@ rename_responses <- function(df) {
     "b_vaccine_likely_who" = "v_vaccine_likely_who", # Binary version of V4_3
     "b_vaccine_likely_govt_health" = "v_vaccine_likely_govt_health", # Binary version of V4_4
     "b_vaccine_likely_politicians" = "v_vaccine_likely_politicians", # Binary version of V4_5
+    # Wave 7 additions
+    "b_received_2_vaccine_doses" = "v_received_2_vaccine_doses", # Binary version of V2
     
     ## multiple choice (mc)
     ## Can only select one of n > 2 choices
@@ -214,12 +216,12 @@ remap_responses <- function(df) {
     D2=list(
       "map"=c(
         "1"="18-24", 
-        "2"="25-34", 
-        "3"="35-44", 
-        "4"="45-54", 
-        "5"="55-64", 
-        "6"="65-74", 
-        "7"="75+"),
+        "2"="25-44", 
+        "3"="25-44", 
+        "4"="45-64", 
+        "5"="45-64", 
+        "6"="65+", 
+        "7"="65+"),
       "default"=NULL,
       "type"="mc"
     ),
@@ -231,7 +233,7 @@ remap_responses <- function(df) {
         "4"="Native Hawaiian or Pacific Islander", 
         "5"="White", 
         "6"="Other", 
-        "multiracial"="Multiracial"),
+        "multiracial"="Other"),
       "default"=NULL,
       "type"="mc"
     ),
@@ -248,7 +250,7 @@ remap_responses <- function(df) {
       "map"=c(
         "1"="Male", 
         "2"="Female", 
-        "3"="Non-binary", 
+        "3"="Other", 
         "4"="Other", 
         "5"=NA),
       "default"=NULL,
@@ -328,6 +330,21 @@ remap_responses <- function(df) {
 #' @return data frame of individual response data with newly derived columns
 create_derivative_columns <- function(df) {
   # Make derivative columns.	
+  
+  if ( !("D11" %in% names(df)) ) {	
+    df$D11 <- NA_real_
+  }
+  if ( !("mc_pregnant" %in% names(df)) ) {	
+    df$mc_pregnant <- NA_real_
+  }
+  
+  df$b_any_comorbidity <- (
+    df$D11 == 1 | df$mc_pregnant == 1 | df$b_heart_disease == 1 | 
+      df$b_cancer == 1 | df$b_chronic_kidney_disease == 1 | 
+      df$b_chronic_lung_disease == 1 | df$b_diabetes == 1 | 
+      df$b_immunocompromised == 1  
+  )
+ 
   if ("mc_occupational_group" %in% names(df)) {	
     df$b_work_in_healthcare <- as.numeric(	
       df$mc_occupational_group == "Healthcare support" | df$mc_occupational_group == "Healthcare practitioner"	
@@ -416,7 +433,6 @@ create_derivative_columns <- function(df) {
 #'
 #' @return list of data frame of individual response data with newly mapped column
 remap_response <- function(df, col_var, map_old_new, default=NULL, response_type="b") {
-  msg_plain(paste0("Mapping response codes for ", col_var, " to meaningful strings..."))
   if (  is.null(df[[col_var]]) | (response_type == "b" & FALSE %in% df[[col_var]]) | inherits(df[[col_var]], "logical") ) {
     # Column is missing/not in this wave or already in boolean format
     return(df)
@@ -425,7 +441,19 @@ remap_response <- function(df, col_var, map_old_new, default=NULL, response_type
   if (response_type %in% c("b", "mc")) {
     df[[col_var]] <- recode(df[[col_var]], !!!map_old_new, .default=default)
   } else if (response_type == "ms") {
+    msg_plain(paste0("Mapping response codes for ", col_var, " to meaningful strings..."))
+    
     split_col <- split_options(df[[col_var]])
+    if (col_var == "ms_comorbidities") {
+      msg_plain("Creating binary columns for subset of comorbidities")
+      df$b_heart_disease <- as.numeric(is_selected(split_col, "3"))
+      df$b_cancer <- as.numeric(is_selected(split_col, "2"))
+      df$b_chronic_kidney_disease <- as.numeric(is_selected(split_col, "7"))
+      df$b_chronic_lung_disease <- as.numeric(is_selected(split_col, "6"))
+      df$b_diabetes <- as.numeric(is_selected(split_col, "12") | is_selected(split_col, "10"))
+      df$b_immunocompromised <- as.numeric(is_selected(split_col, "11"))
+    }
+    
     df[[col_var]] <- mcmapply(split_col, FUN=function(row) {
       if ( length(row) == 1 && all(is.na(row)) ) {
         NA
