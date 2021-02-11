@@ -22,8 +22,15 @@ write_contingency_tables <- function(data, params, geo_level, groupby_vars)
   if (!is.null(data) && nrow(data) != 0) {
     data <- arrange(data, across(groupby_vars))
     
-    # Format reported columns.
-    data <- mutate_at(data, vars(-c(groupby_vars)), 
+    ## Format reported columns.
+    # Find columns that have all missing values
+    missing_cols <- names(df)[, unlist(lapply(names(df), function(name) {
+      all(is.na(df[[name]]))
+    }))]
+    
+    browser()
+    
+    data <- mutate_at(data, vars(-c(groupby_vars, missing_cols)), 
                       function(x) {
                         stri_trim(
                           formatC(x, digits=7, format="f", drop0trailing=TRUE)
