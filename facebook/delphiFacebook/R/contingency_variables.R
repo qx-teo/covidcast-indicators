@@ -361,15 +361,7 @@ create_derivative_columns <- function(df) {
   } else {	
     df$b_work_in_healthcare <- NA_real_	
   }	
-  
-  if ("mc_age" %in% names(df)) {	
-    df$b_65_or_older <- as.numeric(	
-      df$mc_age == "65-74" | df$mc_age == "75+"	
-    )
-  } else {
-    df$b_65_or_older <- NA_real_
-  }
-  
+
   if ("mc_accept_cov_vaccine" %in% names(df)) {	
     df$b_hesitant_cov_vaccine <- as.numeric(	
       df$mc_accept_cov_vaccine == "prob not vaccinate" | df$mc_accept_cov_vaccine == "def not vaccinate"	
@@ -387,8 +379,9 @@ create_derivative_columns <- function(df) {
   }
   
   df$b_hesitant_sideeffects <- as.numeric(
-    df$b_hesitant_cov_vaccine & df$b_concerned_sideeffects
+    df$b_hesitant_cov_vaccine & df$b_concerned_sideeffects 
   )
+  df$b_hesitant_sideeffects[df$wave < 7] <- NA_real_
   
   if ( "b_vaccine_likely_friends" %in% names(df) &
        "b_vaccine_likely_local_health" %in% names(df) &
