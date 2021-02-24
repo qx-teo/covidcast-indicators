@@ -219,6 +219,27 @@ code_testing <- function(input_data) {
     input_data$t_tested_positive_14d <- NA
     input_data$t_wanted_test_14d <- NA
   }
+  
+  if ("B10b" %in% names(input_data)) {
+    tested_reasons <- split_options(input_data$B10b)
+    
+    input_data$t_tested_reason_sick <- is_selected(tested_reasons, "1")
+    input_data$t_tested_reason_contact_sick <- is_selected(tested_reasons, "2")
+    input_data$t_tested_reason_medical_care <- is_selected(tested_reasons, "3")
+    input_data$t_tested_reason_employer_required <- is_selected(tested_reasons, "4")
+    input_data$t_tested_reason_large_event <- is_selected(tested_reasons, "5")
+    input_data$t_tested_reason_indoor_crowd <- is_selected(tested_reasons, "6")
+    input_data$t_tested_reason_visit_fam <- is_selected(tested_reasons, "7")
+  } else {
+    input_data$t_tested_reason_sick <- NA_real_
+    input_data$t_tested_reason_contact_sick <- NA_real_
+    input_data$t_tested_reason_medical_care <- NA_real_
+    input_data$t_tested_reason_employer_required <- NA_real_
+    input_data$t_tested_reason_large_event <- NA_real_
+    input_data$t_tested_reason_indoor_crowd <- NA_real_
+    input_data$t_tested_reason_visit_fam <- NA_real_
+  }
+  
   return(input_data)
 }
 
