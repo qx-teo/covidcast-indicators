@@ -24,6 +24,8 @@ set_aggs <- function() {
   weekly_aggs <- tribble(
     ~name, ~metric, ~group_by, ~compute_fn, ~post_fn,
     "pct_tested_pos_2w", "b_tested_pos_2w", c("mc_race_ethnicity_age_18to64", "mc_ifwhere_working", "nation"), compute_binary, jeffreys_binary,
+    "pct_tested_pos_2w", "b_tested_pos_2w", c("mc_race_ethnicity_subset", "mc_ifwhere_working", "nation"), compute_binary, jeffreys_binary,
+    "pct_tested_pos_2w", "b_tested_pos_2w", c("mc_race_ethnicity_subset", "nation"), compute_binary, jeffreys_binary,
   )
   
   monthly_aggs <- tribble(
