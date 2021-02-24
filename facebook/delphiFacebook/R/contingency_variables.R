@@ -410,7 +410,18 @@ create_derivative_columns <- function(df) {
     df$b_hesitant_trust_govt <- NA_real_
     df$b_hesitant_trust_politicians <- NA_real_
   }
-  
+
+  df$mc_CDC_race_ethnicity <- case_when(
+    df$b_hispanic == 1 ~ "Hispanic",
+    df$b_hispanic == 2 & df$mc_race == "American Indian or Alaska Native" ~ "Non-Hispanic American Indian or Alaska Native",
+    df$b_hispanic == 2 & df$mc_race == "Asian" ~ "Non-Hispanic Asian",
+    df$b_hispanic == 2 & df$mc_race == "Black or African American" ~ "Non-Hispanic Black",
+    df$b_hispanic == 2 & df$mc_race == "Native Hawaiian or Pacific Islander" ~ "Non-Hispanic Native Hawaiian or Pacific Islander",
+    df$b_hispanic == 2 & df$mc_race == "White" ~ "Non-Hispanic White",
+    df$b_hispanic == 2 & df$mc_race == "Other" ~ "Non-Hispanic other or multiracial",
+    TRUE ~ NA_character_
+  )
+
   return(df)
 }
 
