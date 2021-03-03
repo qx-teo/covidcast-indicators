@@ -27,7 +27,31 @@ set_aggs <- function() {
   
   monthly_aggs <- tribble(
     ~name, ~metric, ~group_by, ~compute_fn, ~post_fn,
+    # Nation
+    "pct_vaccinated", "b_had_cov_vaccine", c("nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("nation"), compute_binary, jeffreys_binary,
+    
+    # State
+    "pct_vaccinated", "b_had_cov_vaccine", c("state"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("state"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("nation"), compute_binary, jeffreys_binary,
+    
     "pct_vaccinated", "b_had_cov_vaccine", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
@@ -44,6 +68,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -59,7 +85,9 @@ set_aggs <- function() {
     "pct_trust_govt", "b_vaccine_likely_govt_health", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     
-    "pct_vaccinated", "b_had_cov_vaccine", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_vaccinated", "b_had_cov_vaccine", c("b_not_vaccinated_and_accepting", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_acceptingnot_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_", "b_had_cov_vaccine", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
@@ -76,6 +104,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
@@ -92,6 +122,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("mc_age", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_age", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "nation"), compute_binary, jeffreys_binary,
@@ -108,6 +140,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
@@ -124,6 +158,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -140,6 +176,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
@@ -156,6 +194,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
@@ -172,6 +212,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
@@ -188,6 +230,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
@@ -204,6 +248,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
@@ -220,6 +266,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
@@ -236,6 +284,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
@@ -252,6 +302,8 @@ set_aggs <- function() {
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "b_had_cov_vaccine", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
