@@ -111,9 +111,10 @@ set_aggs <- function() {
     "pct_trust_govt", "b_vaccine_likely_govt_health", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     
-    "pct_vaccinated", "v_covid_vaccinated", c("b_not_vaccinated_and_accepting", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    "pct_not_vaccinated_and_acceptingnot_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    "pct_", "v_covid_vaccinated", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
