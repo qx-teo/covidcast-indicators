@@ -1,0 +1,6 @@
+{
+  "common": {
+    "export_dir": "./receiving",
+    "log_filename": "hhs_hosp.log"
+  }
+}

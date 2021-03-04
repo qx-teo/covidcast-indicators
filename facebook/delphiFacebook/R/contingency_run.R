@@ -24,7 +24,7 @@ set_aggs <- function() {
   weekly_aggs <- tribble(
     ~name, ~metric, ~group_by, ~compute_fn, ~post_fn,
   )
-  
+
   monthly_aggs <- tribble(
     ~name, ~metric, ~group_by, ~compute_fn, ~post_fn,
     # Nation
@@ -322,6 +322,7 @@ set_aggs <- function() {
   )
   
   return(list("week"=monthly_aggs, "month"=monthly_aggs))
+
 }
 
 
@@ -336,7 +337,6 @@ set_aggs <- function() {
 #' @export
 run_contingency_tables <- function(params) {
   aggs <- set_aggs()
-  
   ## Set default number of cores for mclapply to the total available number,
   ## because we are greedy and this will typically run on a server.
   if (params$parallel) {
@@ -358,7 +358,7 @@ run_contingency_tables <- function(params) {
   } else if (params$aggregate_range == "both") {
     params$aggregate_range <- "week"
     run_contingency_tables_many_periods(params, aggs$week)
-    
+
     params$aggregate_range <- "month"
     run_contingency_tables_many_periods(params, aggs$month)
   }
@@ -461,8 +461,8 @@ run_contingency_tables_one_period <- function(params, aggregations)
     msg_df("response input data", input_data)
 
     input_data <- merge_responses(input_data, archive)
-    data_agg <- create_data_for_aggregatation(input_data)
-    data_agg <- filter_data_for_aggregatation(data_agg, params,
+    data_agg <- create_data_for_aggregation(input_data)
+    data_agg <- filter_data_for_aggregation(data_agg, params,
                                               lead_days = params$backfill_days)
 
     if (nrow(data_agg) == 0) {

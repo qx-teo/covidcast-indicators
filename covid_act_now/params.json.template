@@ -1,0 +1,16 @@
+{
+  "common": {
+    "export_dir": "./receiving"
+  },
+  "indicator": {
+    "parquet_url": "https://storage.googleapis.com/can-scrape-outputs/final/can_scrape_api_covid_us.parquet"
+  },
+  "archive": {
+    "cache_dir": "./cache",
+    "bucket_name": "",
+    "aws_credentials": {
+      "aws_access_key_id": "",
+      "aws_secret_access_key": ""
+    }
+  }
+}

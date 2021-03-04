@@ -1,160 +1,134 @@
 import pytest
 
-from os.path import join
-
 import numpy as np
 import pandas as pd
-from delphi_jhu.geo import fips_to_state, disburse, geo_map
+from delphi_jhu.geo import geo_map, add_county_pop, INCIDENCE_BASE
+from delphi_utils import GeoMapper
 
-MAP_DF = pd.read_csv(
-    join("..", "static", "fips_prop_pop.csv"),
-    dtype={"fips": int}
-)
-
-
-class TestFipsToState:
-    def test_exceptions(self):
-
-        assert fips_to_state("70002") == "ma"
-        assert fips_to_state("70003") == "mo"
-
-    def test_normal(self):
-
-        assert fips_to_state("53003") == "wa"
-        assert fips_to_state("48027") == "tx"
-        assert fips_to_state("12003") == "fl"
-        assert fips_to_state("50103") == "vt"
-        assert fips_to_state("15003") == "hi"
-
-
-class TestDisburse:
-    def test_even(self):
-
-        df = pd.DataFrame(
-            {
-                "fips": ["51093", "51175", "51620"],
-                "timestamp": ["2020-02-15", "2020-02-15", "2020-02-15"],
-                "new_counts": [3, 2, 2],
-                "cumulative_counts": [13, 12, 12],
-                "population": [100, 2100, 300],
-            }
-        ).sort_values(["fips", "timestamp"])
-
-        new_df = disburse(df, "51620", ["51093", "51175"])
-
-        assert new_df["new_counts"].values == pytest.approx([4, 3, 2])
-        assert new_df["cumulative_counts"].values == pytest.approx([19, 18, 12])
-
+from delphi_jhu.geo import geo_map, INCIDENCE_BASE
 
 class TestGeoMap:
-    def test_incorrect_geo(self):
-
-        df = pd.DataFrame(
-            {
-                "fips": ["53003", "48027", "50103"],
-                "timestamp": ["2020-02-15", "2020-02-15", "2020-02-15"],
-                "new_counts": [10, 15, 2],
-                "cumulative_counts": [100, 20, 45],
-                "population": [100, 2100, 300],
-            }
-        )
+    def test_incorrect_geo(self, jhu_confirmed_test_data):
+        df = jhu_confirmed_test_data
 
         with pytest.raises(ValueError):
-            geo_map(df, "département", MAP_DF)
+            geo_map(df, "département", "cumulative_prop")
 
-    def test_county(self):
+    def test_fips(self, jhu_confirmed_test_data):
+        test_df = jhu_confirmed_test_data
+        fips_df = geo_map(test_df, "county", "cumulative_prop")
+        pd.testing.assert_frame_equal(fips_df.loc[(fips_df.geo_id == "01001") &
+                                                 (fips_df.timestamp == "2020-09-15")],
+                                      pd.DataFrame({"geo_id": "01001",
+                                                    "timestamp": pd.Timestamp("2020-09-15"),
+                                                    "cumulative_counts": 1463.0,
+                                                    "new_counts": 1463.0,
+                                                    "population": 55869.,
+                                                    "incidence": 1463 / 55869 * INCIDENCE_BASE,
+                                                    "cumulative_prop": 1463 / 55869 *\
+                                                                       INCIDENCE_BASE},
+                                                   index=[36]),
+                                      )
+        # Make sure the prop signals don't have inf values
+        assert not fips_df["incidence"].eq(np.inf).any()
+        assert not fips_df["cumulative_prop"].eq(np.inf).any()
+        # make sure no megafips reported
+        assert not any(i[0].endswith("000") for i in fips_df.geo_id)
 
-        df = pd.DataFrame(
-            {
-                "fips": ["53003", "48027", "50103"],
-                "timestamp": ["2020-02-15", "2020-02-15", "2020-02-15"],
-                "new_counts": [10, 15, 2],
-                "cumulative_counts": [100, 20, 45],
-                "population": [100, 2100, 300],
-            }
+    def test_state_hhs_nation(self, jhu_confirmed_test_data):
+        df = jhu_confirmed_test_data
+        state_df = geo_map(df, "state", "cumulative_prop")
+        pd.testing.assert_frame_equal(state_df.loc[(state_df.geo_id == "al") &
+                                                   (state_df.timestamp == "2020-09-15")],
+                                      pd.DataFrame({"timestamp": pd.Timestamp("2020-09-15"),
+                                                    "geo_id": "al",
+                                                    "cumulative_counts": 140160.0,
+                                                    "new_counts": 140160.0,
+                                                    "population": 4903185.0,
+                                                    "incidence": 140160 / 4903185 * INCIDENCE_BASE,
+                                                    "cumulative_prop": 140160 / 4903185 *\
+                                                                       INCIDENCE_BASE},
+                                                   index=[1])
+                                      )
+        pd.testing.assert_frame_equal(state_df.loc[(state_df.geo_id == "gu") &
+                                                   (state_df.timestamp == "2020-09-15")],
+                                      pd.DataFrame({"timestamp": pd.Timestamp("2020-09-15"),
+                                                    "geo_id": "gu",
+                                                    "cumulative_counts": 502.0,
+                                                    "new_counts": 16.0,
+                                                    "population": 159358.0,
+                                                    "incidence": 16 / 159358 * INCIDENCE_BASE,
+                                                    "cumulative_prop": 502 / 159358 *\
+                                                                       INCIDENCE_BASE},
+                                                   index=[11])
+                                      )
+        # Make sure the prop signals don't have inf values
+        assert not state_df["incidence"].eq(np.inf).any()
+        assert not state_df["cumulative_prop"].eq(np.inf).any()
+
+        hhs_df = geo_map(df, "hhs", "cumulative_prop")
+        pd.testing.assert_frame_equal(hhs_df.loc[(hhs_df.geo_id == "1") &
+                                                 (hhs_df.timestamp == "2020-09-15")],
+                                      pd.DataFrame({"timestamp": pd.Timestamp("2020-09-15"),
+                                                    "geo_id": "1",
+                                                    "cumulative_counts": 218044.0,
+                                                    "new_counts": 218044.0,
+                                                    "population": 14845063.0,
+                                                    "incidence": 218044 / 14845063 * INCIDENCE_BASE,
+                                                    "cumulative_prop": 218044 / 14845063 *\
+                                                                       INCIDENCE_BASE},
+                                                   index=[0])
+                                      )
+        # Make sure the prop signals don't have inf values
+        assert not hhs_df["incidence"].eq(np.inf).any()
+        assert not hhs_df["cumulative_prop"].eq(np.inf).any()
+
+        nation_df = geo_map(df, "nation", "cumulative_prop")
+        pd.testing.assert_frame_equal(nation_df.loc[(nation_df.geo_id == "us") &
+                                                    (nation_df.timestamp == "2020-09-15")],
+                                      pd.DataFrame({"timestamp": pd.Timestamp("2020-09-15"),
+                                                    "geo_id": "us",
+                                                    "cumulative_counts": 6589234.0,
+                                                    "new_counts": 6588748.0,
+                                                    "population": 332099456.0,
+                                                    "incidence": 6588748 / 332099456 *\
+                                                                 INCIDENCE_BASE,
+                                                    "cumulative_prop": 6589234 / 332099456. *\
+                                                                       INCIDENCE_BASE},
+                                                   index=[0])
+                                      )
+        # Make sure the prop signals don't have inf values
+        assert not nation_df["incidence"].eq(np.inf).any()
+        assert not nation_df["cumulative_prop"].eq(np.inf).any()
+
+    def test_msa_hrr(self, jhu_confirmed_test_data):
+        for geo in ["msa", "hrr"]:
+            test_df = jhu_confirmed_test_data
+            new_df = geo_map(test_df, geo, "cumulative_prop")
+            gmpr = GeoMapper()
+            test_df = gmpr.add_population_column(test_df, "fips")
+            test_df = gmpr.replace_geocode(test_df, "fips", geo, date_col="timestamp")
+
+            new_df = new_df.set_index(["geo_id", "timestamp"]).sort_index()
+            test_df = test_df.set_index([geo, "timestamp"]).sort_index()
+
+            # Check that the non-proportional columns are identical
+            assert new_df.eq(test_df)[["new_counts", "population", "cumulative_counts"]].all().all()
+            # Check that the proportional signals are identical
+            exp_incidence = test_df["new_counts"] / test_df["population"]  * INCIDENCE_BASE
+            expected_cumulative_prop = test_df["cumulative_counts"] / test_df["population"] *\
+                INCIDENCE_BASE
+            assert new_df["incidence"].eq(exp_incidence).all()
+            assert new_df["cumulative_prop"].eq(expected_cumulative_prop).all()
+            # Make sure the prop signals don't have inf values
+            assert not new_df["incidence"].eq(np.inf).any()
+            assert not new_df["cumulative_prop"].eq(np.inf).any()
+
+    def test_add_county_pop(self):
+        gmpr = GeoMapper()
+        test_df = pd.DataFrame({"fips": ["01001", "06000", "06097", "72000", "72153", "78000"]})
+        pd.testing.assert_frame_equal(
+            add_county_pop(test_df, gmpr),
+            pd.DataFrame({"fips": ["01001", "06000", "06097", "72000", "72153", "78000"],
+                          "population": [55869, np.nan, 494336, np.nan, 42043,  106405]})
         )
-
-        new_df = geo_map(df, "county", MAP_DF)
-
-        exp_incidence = df["new_counts"] / df["population"] * 100000
-        exp_cprop = df["cumulative_counts"] / df["population"] * 100000
-
-        assert set(new_df["geo_id"].values) == set(df["fips"].values)
-        assert set(new_df["timestamp"].values) == set(df["timestamp"].values)
-        assert set(new_df["incidence"].values) == set(exp_incidence.values)
-        assert set(new_df["cumulative_prop"].values) == set(exp_cprop.values)
-
-    def test_state(self):
-
-        df = pd.DataFrame(
-            {
-                "fips": ["04001", "04003", "04009", "25023"],
-                "timestamp": ["2020-02-15", "2020-02-15", "2020-02-15", "2020-02-15"],
-                "new_counts": [10, 15, 2, 13],
-                "cumulative_counts": [100, 20, 45, 60],
-                "population": [100, 2100, 300, 25],
-            }
-        )
-
-        new_df = geo_map(df, "state", MAP_DF)
-
-        exp_incidence = np.array([27, 13]) / np.array([2500, 25]) * 100000
-        exp_cprop = np.array([165, 60]) / np.array([2500, 25]) * 100000
-
-        assert (new_df["geo_id"].values == ["az", "ma"]).all()
-        assert (new_df["timestamp"].values == ["2020-02-15", "2020-02-15"]).all()
-        assert (new_df["new_counts"].values == [27, 13]).all()
-        assert (new_df["cumulative_counts"].values == [165, 60]).all()
-        assert (new_df["population"].values == [2500, 25]).all()
-        assert (new_df["incidence"].values == exp_incidence).all()
-        assert (new_df["cumulative_prop"].values == exp_cprop).all()
-
-    def test_hrr(self):
-
-        df = pd.DataFrame(
-            {
-                "fips": ["13009", "13017", "13021", "09015"],
-                "timestamp": ["2020-02-15", "2020-02-15", "2020-02-15", "2020-02-15"],
-                "new_counts": [10, 15, 2, 13],
-                "cumulative_counts": [100, 20, 45, 60],
-                "population": [100, 2100, 300, 25],
-            }
-        )
-
-        new_df = geo_map(df, "hrr", MAP_DF)
-
-        exp_incidence = np.array([13, 27]) / np.array([25, 2500]) * 100000
-        exp_cprop = np.array([60, 165]) / np.array([25, 2500]) * 100000
-
-        assert (new_df["geo_id"].values == [110, 147]).all()
-        assert (new_df["timestamp"].values == ["2020-02-15", "2020-02-15"]).all()
-        assert new_df["new_counts"].values == pytest.approx([13.0, 27.0])
-        assert new_df["cumulative_counts"].values == pytest.approx([60, 165])
-        assert new_df["population"].values == pytest.approx([25, 2500])
-        assert new_df["incidence"].values == pytest.approx(exp_incidence)
-        assert new_df["cumulative_prop"].values == pytest.approx(exp_cprop)
-
-    def test_msa(self):
-
-        df = pd.DataFrame(
-            {
-                "fips": ["13009", "13017", "13021", "09015"],
-                "timestamp": ["2020-02-15", "2020-02-15", "2020-02-15", "2020-02-15"],
-                "new_counts": [10, 15, 2, 13],
-                "cumulative_counts": [100, 20, 45, 60],
-                "population": [100, 2100, 300, 25],
-            }
-        )
-
-        new_df = geo_map(df, "msa", MAP_DF)
-
-        exp_incidence = np.array([2, 13]) / np.array([300, 25]) * 100000
-        exp_cprop = np.array([45, 60]) / np.array([300, 25]) * 100000
-
-        assert (new_df["geo_id"].values == [31420, 49340]).all()
-        assert (new_df["timestamp"].values == ["2020-02-15", "2020-02-15"]).all()
-        assert new_df["new_counts"].values == pytest.approx([2.0, 13.0])
-        assert new_df["cumulative_counts"].values == pytest.approx([45, 60])
-        assert new_df["population"].values == pytest.approx([300, 25])
-        assert new_df["incidence"].values == pytest.approx(exp_incidence)
-        assert new_df["cumulative_prop"].values == pytest.approx(exp_cprop)

@@ -1,0 +1,11 @@
+{
+  "common": {
+    "export_dir": "./receiving",
+    "log_exceptions": false
+  },
+  "indicator": {
+    "export_start_date": "2020-02-20",
+    "num_export_days": 14,
+    "bigquery_credentials": {}
+  }
+}
