@@ -333,16 +333,19 @@ remap_responses <- function(df) {
 create_derivative_columns <- function(df) {
   # Make derivative columns.	
   if ("D11" %in% names(df)) {
-    df$D11 <- case_when(
+    df$b_smoke <- case_when(
       df$D11 == 1 ~ 1,
       df$D11 == 2 ~ 0,
       TRUE ~ NA_real_
     )
   }
+  
   if ("mc_pregnant" %in% names(df)) {
     df$b_pregnant <- case_when(
       df$mc_pregnant == 1 ~ 1,
       df$mc_pregnant == 2 ~ 0,
+      df$mc_pregnant == 4 ~ 0,
+      df$mc_gender == "Male" ~ 0,
       TRUE ~ NA_real_
     )
   }
@@ -352,6 +355,14 @@ create_derivative_columns <- function(df) {
       df$b_cancer == 1 | df$b_chronic_kidney_disease == 1 | 
       df$b_chronic_lung_disease == 1 | df$b_diabetes == 1 | 
       df$b_immunocompromised == 1  
+  )
+  
+  df$b_any_comorbidity_preg_smoke_obese <- as.numeric(
+    df$b_heart_disease == 1 | 
+      df$b_cancer == 1 | df$b_chronic_kidney_disease == 1 | 
+      df$b_chronic_lung_disease == 1 | df$b_diabetes == 1 | 
+      df$b_immunocompromised == 1  | df$b_pregnant == 1 |
+      df$b_smoke == 1 | df$b_obese == 1
   )
  
   if ("mc_occupational_group" %in% names(df)) {	
@@ -370,6 +381,18 @@ create_derivative_columns <- function(df) {
     df$b_hesitant_cov_vaccine <- NA_real_	
   }	
   
+  df$mc_vaccinated_acceptance <- case_when(
+    df$v_covid_vaccinated == 1 ~ "vaccinated",
+    df$v_covid_vaccinated == 0 & df$b_accept_cov_vaccine == 1 ~ "not vaccinated and accepting",
+    df$v_covid_vaccinated == 0 & df$b_accept_cov_vaccine == 0 ~ "not vaccinated and hesitant",
+    df$v_covid_vaccinated == 0 & is.na(df$b_accept_cov_vaccine) == TRUE ~ "not vaccinated and did not indicate hesitance level"
+  )
+  
+  df$b_vaccinated <- df$mc_vaccinated_acceptance == "vaccinated"
+  df$b_not_vaccinated_and_accepting <- df$mc_vaccinated_acceptance == "not vaccinated and accepting"
+  df$b_not_vaccinated_and_hesitant <- df$mc_vaccinated_acceptance == "not vaccinated and hesitant"
+  df$b_not_vaccinated_and_did_not_indicate_hesitance_level <- df$mc_vaccinated_acceptance == "not vaccinated and did not indicate hesitance level"
+  
   if ("mc_concerned_sideeffects" %in% names(df)) {	
     df$b_concerned_sideeffects <- as.numeric(	
       df$mc_concerned_sideeffects == 1 | df$mc_concerned_sideeffects == 2	
@@ -386,13 +409,7 @@ create_derivative_columns <- function(df) {
     df$b_concerned_sideeffects <- NA_real_
   }
 
-  df$b_hesitant_sideeffects <- as.numeric(
-    df$b_hesitant_cov_vaccine & df$b_concerned_sideeffects
-  )
-
-  df$b_hesitant_sideeffects[df$wave < 7] <- NA_real_
-  
-  df$b_hesitant_sideeffects_2 <- case_when(
+  df$b_hesitant_sideeffects <- case_when(
     is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
     is.na(df$b_concerned_sideeffects) == TRUE ~ NA,
     df$wave < 7 ~ NA,
@@ -407,21 +424,52 @@ create_derivative_columns <- function(df) {
        "b_vaccine_likely_who" %in% names(df) &
        "b_vaccine_likely_govt_health" %in% names(df) &
        "b_vaccine_likely_politicians" %in% names(df) ) {
-    df$b_hesitant_trust_fam <- as.numeric(
-      df$b_hesitant_cov_vaccine & df$b_vaccine_likely_friends
+    df$b_hesitant_trust_fam <- case_when(
+      is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
+      is.na(df$b_vaccine_likely_friends) == TRUE ~ NA,
+      df$wave < 7 ~ NA,
+      df$b_hesitant_cov_vaccine == 0 ~ NA,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_friends == 1 ~ TRUE,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_friends == 0 ~ FALSE,
+      TRUE ~ NA
     )
-    df$b_hesitant_trust_healthcare <- as.numeric(
-      df$b_hesitant_cov_vaccine & df$b_vaccine_likely_local_health
+    df$b_hesitant_trust_healthcare <- case_when(
+      is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
+      is.na(df$b_vaccine_likely_local_health) == TRUE ~ NA,
+      df$wave < 7 ~ NA,
+      df$b_hesitant_cov_vaccine == 0 ~ NA,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_local_health == 1 ~ TRUE,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_local_health == 0 ~ FALSE,
+      TRUE ~ NA
     )
-    df$b_hesitant_trust_who <- as.numeric(
-      df$b_hesitant_cov_vaccine & df$b_vaccine_likely_who
+    df$b_hesitant_trust_who <- case_when(
+      is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
+      is.na(df$b_vaccine_likely_who) == TRUE ~ NA,
+      df$wave < 7 ~ NA,
+      df$b_hesitant_cov_vaccine == 0 ~ NA,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_who == 1 ~ TRUE,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_who == 0 ~ FALSE,
+      TRUE ~ NA
     )
-    df$b_hesitant_trust_govt <- as.numeric(
-      df$b_hesitant_cov_vaccine & df$b_vaccine_likely_govt_health
+    df$b_hesitant_trust_govt <- case_when(
+      is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
+      is.na(df$b_vaccine_likely_govt_health) == TRUE ~ NA,
+      df$wave < 7 ~ NA,
+      df$b_hesitant_cov_vaccine == 0 ~ NA,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_govt_health == 1 ~ TRUE,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_govt_health == 0 ~ FALSE,
+      TRUE ~ NA
     )
-    df$b_hesitant_trust_politicians <- as.numeric(
-      df$b_hesitant_cov_vaccine & df$b_vaccine_likely_politicians
+    df$b_hesitant_trust_politicians <- case_when(
+      is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
+      is.na(df$b_vaccine_likely_politicians) == TRUE ~ NA,
+      df$wave < 7 ~ NA,
+      df$b_hesitant_cov_vaccine == 0 ~ NA,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_politicians == 1 ~ TRUE,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_politicians == 0 ~ FALSE,
+      TRUE ~ NA
     )
+    
   } else {
     df$b_hesitant_trust_fam <- NA_real_
     df$b_hesitant_trust_healthcare <- NA_real_
@@ -485,6 +533,7 @@ remap_response <- function(df, col_var, map_old_new, default=NULL, response_type
       df$b_chronic_lung_disease <- as.numeric(is_selected(split_col, "6"))
       df$b_diabetes <- as.numeric(is_selected(split_col, "12") | is_selected(split_col, "10"))
       df$b_immunocompromised <- as.numeric(is_selected(split_col, "11"))
+      df$b_obese <- as.numeric(is_selected(split_col, "13"))
     }
     
     df[[col_var]] <- mcmapply(split_col, FUN=function(row) {
