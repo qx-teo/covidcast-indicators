@@ -357,14 +357,18 @@ create_derivative_columns <- function(df) {
       df$b_immunocompromised == 1  
   )
   
-  df$b_any_comorbidity_preg_smoke_obese <- as.numeric(
-    df$b_heart_disease == 1 | 
-      df$b_cancer == 1 | df$b_chronic_kidney_disease == 1 | 
-      df$b_chronic_lung_disease == 1 | df$b_diabetes == 1 | 
-      df$b_immunocompromised == 1  | df$b_pregnant == 1 |
-      df$b_smoke == 1 | df$b_obese == 1
-  )
- 
+  if ( "D11" %in% names(df) && "mc_pregnant" %in% names(df) ) {
+    df$b_any_comorbidity_preg_smoke_obese <- as.numeric(
+      df$b_heart_disease == 1 | 
+        df$b_cancer == 1 | df$b_chronic_kidney_disease == 1 | 
+        df$b_chronic_lung_disease == 1 | df$b_diabetes == 1 | 
+        df$b_immunocompromised == 1  | df$b_pregnant == 1 |
+        df$b_smoke == 1 | df$b_obese == 1
+    )
+  } else {
+    df$b_any_comorbidity_preg_smoke_obese <- NA_real_
+  }
+  
   if ("mc_occupational_group" %in% names(df)) {	
     df$b_work_in_healthcare <- as.numeric(	
       df$mc_occupational_group == "Healthcare support" | df$mc_occupational_group == "Healthcare practitioner"	
