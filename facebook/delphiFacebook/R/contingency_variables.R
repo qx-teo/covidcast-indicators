@@ -383,6 +383,16 @@ create_derivative_columns <- function(df) {
   )
   df$b_hesitant_sideeffects[df$wave < 7] <- NA_real_
   
+  df$b_hesitant_sideeffects_2 <- case_when(
+    is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
+    is.na(df$b_concerned_sideeffects) == TRUE ~ NA,
+    df$wave < 7 ~ NA,
+    df$b_hesitant_cov_vaccine == 0 ~ NA,
+    df$b_hesitant_cov_vaccine == 1 & df$b_concerned_sideeffects == 1 ~ TRUE,
+    df$b_hesitant_cov_vaccine == 1 & df$b_concerned_sideeffects == 0 ~ FALSE,
+    TRUE ~ NA
+  )
+  
   if ( "b_vaccine_likely_friends" %in% names(df) &
        "b_vaccine_likely_local_health" %in% names(df) &
        "b_vaccine_likely_who" %in% names(df) &
