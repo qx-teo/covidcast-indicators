@@ -2,7 +2,7 @@
 % Please edit documentation in R/binary.R
 \name{jeffreys_binary}
 \alias{jeffreys_binary}
-\title{Apply a Jeffreys correction to estimates and their standard errors.}
+\title{Apply a Jeffreys correction to binomial estimates and their standard errors.}
 \usage{
 jeffreys_binary(df)
 }
@@ -13,5 +13,5 @@ jeffreys_binary(df)
 Updated data frame.
 }
 \description{
-Apply a Jeffreys correction to estimates and their standard errors.
+Apply a Jeffreys correction to binomial estimates and their standard errors.
 }

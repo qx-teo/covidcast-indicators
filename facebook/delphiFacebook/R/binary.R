@@ -181,7 +181,7 @@ compute_binary_response <- function(response, weight, sample_size)
               effective_sample_size = sample_size)) # TODO effective sample size
 }
 
-#' Apply a Jeffreys correction to estimates and their standard errors.
+#' Apply a Jeffreys correction to binomial estimates and their standard errors.
 #'
 #' @param df Data frame
 #' @return Updated data frame.
@@ -204,6 +204,31 @@ jeffreys_binary <- function(df) {
 jeffreys_percentage <- function(percentage, sample_size) {
   return((percentage * sample_size + 50) / (sample_size + 1))
 }
+
+#' Apply a Jeffreys correction to multinomial estimates and their standard errors.
+#'
+#' @param df Data frame
+#' @return Updated data frame.
+#' @importFrom dplyr mutate
+jeffreys_multinomial <- function(df) {
+  return(mutate(df,
+                val = jeffreys_multinomial_percentage(.data$val, .data$sample_size),
+                se = binary_se(.data$val, .data$sample_size)))
+}
+
+#' Adjust a multionmial percentage estimate to use the Jeffreys method.
+#'
+#' Takes a previously estimated percentage (calculated with num_group1 / total *
+#' 100) and replaces it with the Jeffreys version, where one pseudo-observation
+#' with 1/k * 100 % group1 is inserted.
+#'
+#' @param percentage Vector of percentages to adjust.
+#' @param sample_size Vector of corresponding sample sizes.
+#' @return Vector of adjusted percentages.
+jeffreys_multinomial_percentage <- function(percentage, sample_size) {
+  return((percentage * sample_size + 25) / (sample_size + 1))
+}
+
 
 #' Calculate the standard error for a binary proportion (as a percentage)
 #'
