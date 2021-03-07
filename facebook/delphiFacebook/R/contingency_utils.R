@@ -99,7 +99,7 @@ get_filenames_in_range <- function(start_date, end_date, params) {
   start_date <- as_date(start_date) - days(params$backfill_days)
   end_date <- as_date(end_date)
   
-  if ( is.null(params$input) | length(params$input) == 0 | is.na(params$input) ) {
+  if ( is.null(params$input) | length(params$input) == 0 ) {
     date_pattern <- "^[0-9]{4}-[0-9]{2}-[0-9]{2}.*[.]csv$"
     youtube_pattern <- ".*YouTube[.]csv$"
     
