@@ -70,7 +70,7 @@ set_aggs <- function() {
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("state"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("state"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("state"), compute_binary, jeffreys_binary,
-    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("state"), compute_binary, jeffreys_binary,
     
     # Demographic breakdowns
     "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
