@@ -61,7 +61,7 @@ update_params <- function(params) {
     date_range <- list(params$start_time, params$end_time)
     params$input <- get_filenames_in_range(date_range[[1]], date_range[[2]], params)
 
-  } else if ( is.null(params$end_date) ) {
+  } else {
     if (is.null(params$end_time)) {
       params$end_time <- Sys.time()
     }
