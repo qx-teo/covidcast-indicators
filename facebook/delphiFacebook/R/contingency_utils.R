@@ -105,6 +105,8 @@ get_filenames_in_range <- function(start_date, end_date, params) {
     
     filenames <- list.files(path=params$input_dir)
     filenames <- filenames[grepl(date_pattern, filenames) & !grepl(youtube_pattern, filenames)]
+  } else {
+    filenames <- params$input
   }
     
   file_end_dates <- as_date(substr(filenames, 1, 10))
