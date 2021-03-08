@@ -329,7 +329,7 @@ remap_responses <- function(df) {
 #'
 #' @return data frame of individual response data with newly derived columns
 #' 
-#' @importFrom dplyr case_when
+#' @importFrom dplyr case_when coalesce
 create_derivative_columns <- function(df) {
   # Make derivative columns.	
   if ("D11" %in% names(df)) {
@@ -381,9 +381,173 @@ create_derivative_columns <- function(df) {
     df$b_hesitant_cov_vaccine <- as.numeric(	
       df$mc_accept_cov_vaccine == "prob not vaccinate" | df$mc_accept_cov_vaccine == "def not vaccinate"	
     )	
+ 
+    df$b_accepting_yes_definitely <- df$mc_accept_cov_vaccine == "def vaccinate"
+    df$b_accepting_yes_probably <- df$mc_accept_cov_vaccine == "prob vaccinate"
+    df$b_accepting_no_probably <- df$mc_accept_cov_vaccine == "prob not vaccinate"
+    df$b_accepting_no_definitely <- df$mc_accept_cov_vaccine == "def not vaccinate"
+    
   } else {	
-    df$b_hesitant_cov_vaccine <- NA_real_	
+    df$b_hesitant_cov_vaccine <- NA_real_
+    
+    df$b_accepting_yes_definitely <- NA
+    df$b_accepting_yes_probably <- NA
+    df$b_accepting_no_probably <- NA
+    df$b_accepting_no_definitely <- NA
   }	
+  
+  
+  if ("V5a" %in% names(df) && "V5b" %in% names(df) && "V5c" %in% names(df)) {
+    # introduced in Wave 8
+    hesitancy_reasons_a <- split_options(df$V5a)
+    hesitancy_reasons_b <- split_options(df$V5b)
+    hesitancy_reasons_c <- split_options(df$V5c)
+    
+    df$v_hesitancy_reason_sideeffects_a <- is_selected(hesitancy_reasons_a, "1")
+    df$v_hesitancy_reason_allergic_a <- is_selected(hesitancy_reasons_a, "2")
+    df$v_hesitancy_reason_ineffective_a <- is_selected(hesitancy_reasons_a, "3")
+    df$v_hesitancy_reason_unnecessary_a <- is_selected(hesitancy_reasons_a, "4")
+    df$v_hesitancy_reason_dislike_vaccines_a <- is_selected(hesitancy_reasons_a, "5")
+    df$v_hesitancy_reason_not_recommended_a <- is_selected(hesitancy_reasons_a, "6")
+    df$v_hesitancy_reason_wait_safety_a <- is_selected(hesitancy_reasons_a, "7")
+    df$v_hesitancy_reason_low_priority_a <- is_selected(hesitancy_reasons_a, "8")
+    df$v_hesitancy_reason_cost_a <- is_selected(hesitancy_reasons_a, "9")
+    df$v_hesitancy_reason_distrust_vaccines_a <- is_selected(hesitancy_reasons_a, "10")
+    df$v_hesitancy_reason_distrust_gov_a <- is_selected(hesitancy_reasons_a, "11")
+    df$v_hesitancy_reason_health_condition_a <- is_selected(hesitancy_reasons_a, "12")
+    df$v_hesitancy_reason_other_a <- is_selected(hesitancy_reasons_a, "13")
+    df$v_hesitancy_reason_pregnant_a <- is_selected(hesitancy_reasons_a, "14")
+    df$v_hesitancy_reason_religious_a <- is_selected(hesitancy_reasons_a, "15")
+    
+    df$v_hesitancy_reason_sideeffects_b <- is_selected(hesitancy_reasons_b, "1")
+    df$v_hesitancy_reason_allergic_b <- is_selected(hesitancy_reasons_b, "2")
+    df$v_hesitancy_reason_ineffective_b <- is_selected(hesitancy_reasons_b, "3")
+    df$v_hesitancy_reason_unnecessary_b <- is_selected(hesitancy_reasons_b, "4")
+    df$v_hesitancy_reason_dislike_vaccines_b <- is_selected(hesitancy_reasons_b, "5")
+    df$v_hesitancy_reason_not_recommended_b <- is_selected(hesitancy_reasons_b, "6")
+    df$v_hesitancy_reason_wait_safety_b <- is_selected(hesitancy_reasons_b, "7")
+    df$v_hesitancy_reason_low_priority_b <- is_selected(hesitancy_reasons_b, "8")
+    df$v_hesitancy_reason_cost_b <- is_selected(hesitancy_reasons_b, "9")
+    df$v_hesitancy_reason_distrust_vaccines_b <- is_selected(hesitancy_reasons_b, "10")
+    df$v_hesitancy_reason_distrust_gov_b <- is_selected(hesitancy_reasons_b, "11")
+    df$v_hesitancy_reason_health_condition_b <- is_selected(hesitancy_reasons_b, "12")
+    df$v_hesitancy_reason_other_b <- is_selected(hesitancy_reasons_b, "13")
+    df$v_hesitancy_reason_pregnant_b <- is_selected(hesitancy_reasons_b, "14")
+    df$v_hesitancy_reason_religious_b <- is_selected(hesitancy_reasons_b, "15")
+    
+    df$v_hesitancy_reason_sideeffects_c <- is_selected(hesitancy_reasons_c, "1")
+    df$v_hesitancy_reason_allergic_c <- is_selected(hesitancy_reasons_c, "2")
+    df$v_hesitancy_reason_ineffective_c <- is_selected(hesitancy_reasons_c, "3")
+    df$v_hesitancy_reason_unnecessary_c <- is_selected(hesitancy_reasons_c, "4")
+    df$v_hesitancy_reason_dislike_vaccines_c <- is_selected(hesitancy_reasons_c, "5")
+    df$v_hesitancy_reason_not_recommended_c <- is_selected(hesitancy_reasons_c, "6")
+    df$v_hesitancy_reason_wait_safety_c <- is_selected(hesitancy_reasons_c, "7")
+    df$v_hesitancy_reason_low_priority_c <- is_selected(hesitancy_reasons_c, "8")
+    df$v_hesitancy_reason_cost_c <- is_selected(hesitancy_reasons_c, "9")
+    df$v_hesitancy_reason_distrust_vaccines_c <- is_selected(hesitancy_reasons_c, "10")
+    df$v_hesitancy_reason_distrust_gov_c <- is_selected(hesitancy_reasons_c, "11")
+    df$v_hesitancy_reason_health_condition_c <- is_selected(hesitancy_reasons_c, "12")
+    df$v_hesitancy_reason_other_c <- is_selected(hesitancy_reasons_c, "13")
+    df$v_hesitancy_reason_pregnant_c <- is_selected(hesitancy_reasons_c, "14")
+    df$v_hesitancy_reason_religious_c <- is_selected(hesitancy_reasons_c, "15")
+    
+  } else {
+    df$v_hesitancy_reason_sideeffects_a <- NA_real_
+    df$v_hesitancy_reason_allergic_a <- NA_real_
+    df$v_hesitancy_reason_ineffective_a <- NA_real_
+    df$v_hesitancy_reason_unnecessary_a <- NA_real_
+    df$v_hesitancy_reason_dislike_vaccines_a <- NA_real_
+    df$v_hesitancy_reason_not_recommended_a <- NA_real_
+    df$v_hesitancy_reason_wait_safety_a <- NA_real_
+    df$v_hesitancy_reason_low_priority_a <- NA_real_
+    df$v_hesitancy_reason_cost_a <- NA_real_
+    df$v_hesitancy_reason_distrust_vaccines_a <- NA_real_
+    df$v_hesitancy_reason_distrust_gov_a <- NA_real_
+    df$v_hesitancy_reason_health_condition_a <- NA_real_
+    df$v_hesitancy_reason_other_a <- NA_real_
+    df$v_hesitancy_reason_pregnant_a <- NA_real_
+    df$v_hesitancy_reason_religious_a <- NA_real_
+    
+    df$v_hesitancy_reason_sideeffects_b <- NA_real_
+    df$v_hesitancy_reason_allergic_b <- NA_real_
+    df$v_hesitancy_reason_ineffective_b <- NA_real_
+    df$v_hesitancy_reason_unnecessary_b <- NA_real_
+    df$v_hesitancy_reason_dislike_vaccines_b <- NA_real_
+    df$v_hesitancy_reason_not_recommended_b <- NA_real_
+    df$v_hesitancy_reason_wait_safety_b <- NA_real_
+    df$v_hesitancy_reason_low_priority_b <- NA_real_
+    df$v_hesitancy_reason_cost_b <- NA_real_
+    df$v_hesitancy_reason_distrust_vaccines_b <- NA_real_
+    df$v_hesitancy_reason_distrust_gov_b <- NA_real_
+    df$v_hesitancy_reason_health_condition_b <- NA_real_
+    df$v_hesitancy_reason_other_b <- NA_real_
+    df$v_hesitancy_reason_pregnant_b <- NA_real_
+    df$v_hesitancy_reason_religious_b <- NA_real_
+    
+    df$v_hesitancy_reason_sideeffects_c <- NA_real_
+    df$v_hesitancy_reason_allergic_c <- NA_real_
+    df$v_hesitancy_reason_ineffective_c <- NA_real_
+    df$v_hesitancy_reason_unnecessary_c <- NA_real_
+    df$v_hesitancy_reason_dislike_vaccines_c <- NA_real_
+    df$v_hesitancy_reason_not_recommended_c <- NA_real_
+    df$v_hesitancy_reason_wait_safety_c <- NA_real_
+    df$v_hesitancy_reason_low_priority_c <- NA_real_
+    df$v_hesitancy_reason_cost_c <- NA_real_
+    df$v_hesitancy_reason_distrust_vaccines_c <- NA_real_
+    df$v_hesitancy_reason_distrust_gov_c <- NA_real_
+    df$v_hesitancy_reason_health_condition_c <- NA_real_
+    df$v_hesitancy_reason_other_c <- NA_real_
+    df$v_hesitancy_reason_pregnant_c <- NA_real_
+    df$v_hesitancy_reason_religious_c <- NA_real_
+    
+  }
+  
+  df$v_hesitancy_reason_sideeffects_5bc <- coalesce(df$v_hesitancy_reason_sideeffects_b, df$v_hesitancy_reason_sideeffects_c)
+  df$v_hesitancy_reason_allergic_5bc <- coalesce(df$v_hesitancy_reason_allergic_b, df$v_hesitancy_reason_allergic_c)
+  df$v_hesitancy_reason_ineffective_5bc <- coalesce(df$v_hesitancy_reason_ineffective_b, df$v_hesitancy_reason_ineffective_c)
+  df$v_hesitancy_reason_unnecessary_5bc <- coalesce(df$v_hesitancy_reason_unnecessary_b, df$v_hesitancy_reason_unnecessary_c)
+  df$v_hesitancy_reason_dislike_vaccines_5bc <- coalesce(df$v_hesitancy_reason_dislike_vaccines_b, df$v_hesitancy_reason_dislike_vaccines_c)
+  df$v_hesitancy_reason_not_recommended_5bc <- coalesce(df$v_hesitancy_reason_not_recommended_b, df$v_hesitancy_reason_not_recommended_c)
+  df$v_hesitancy_reason_wait_safety_5bc <- coalesce(df$v_hesitancy_reason_wait_safety_b, df$v_hesitancy_reason_wait_safety_c)
+  df$v_hesitancy_reason_low_priority_5bc <- coalesce(df$v_hesitancy_reason_low_priority_b, df$v_hesitancy_reason_low_priority_c)
+  df$v_hesitancy_reason_cost_5bc <- coalesce(df$v_hesitancy_reason_cost_b, df$v_hesitancy_reason_cost_c)
+  df$v_hesitancy_reason_distrust_vaccines_5bc <- coalesce(df$v_hesitancy_reason_distrust_vaccines_b, df$v_hesitancy_reason_distrust_vaccines_c)
+  df$v_hesitancy_reason_distrust_gov_5bc <- coalesce(df$v_hesitancy_reason_distrust_gov_b, df$v_hesitancy_reason_distrust_gov_c)
+  df$v_hesitancy_reason_health_condition_5bc <- coalesce(df$v_hesitancy_reason_health_condition_b, df$v_hesitancy_reason_health_condition_c)
+  df$v_hesitancy_reason_other_5bc <- coalesce(df$v_hesitancy_reason_other_b, df$v_hesitancy_reason_other_c)
+  df$v_hesitancy_reason_pregnant_5bc <- coalesce(df$v_hesitancy_reason_pregnant_b, df$v_hesitancy_reason_pregnant_c)
+  df$v_hesitancy_reason_religious_5bc <- coalesce(df$v_hesitancy_reason_religious_b, df$v_hesitancy_reason_religious_c)
+  
+  
+  if ("V6" %in% names(df)) {
+    dontneed_reasons <- split_options(df$V6)
+    
+    df$v_dontneed_reason_alreadyhad <- is_selected(dontneed_reasons, "1")
+    df$v_dontneed_reason_dontspendtime <- is_selected(dontneed_reasons, "2")
+    df$v_dontneed_reason_nothighrisk <- is_selected(dontneed_reasons, "3")
+    df$v_dontneed_reason_precautions <- is_selected(dontneed_reasons, "4")
+    df$v_dontneed_reason_notserious <- is_selected(dontneed_reasons, "5")
+    df$v_dontneed_reason_notbeneficial <- is_selected(dontneed_reasons, "7")
+    df$v_dontneed_reason_other <- is_selected(dontneed_reasons, "8")
+    
+  } else {
+    df$v_dontneed_reason_alreadyhad <- NA
+    df$v_dontneed_reason_dontspendtime <- NA
+    df$v_dontneed_reason_nothighrisk <- NA
+    df$v_dontneed_reason_precautions <- NA
+    df$v_dontneed_reason_notserious <- NA
+    df$v_dontneed_reason_notbeneficial <- NA
+    df$v_dontneed_reason_other <- NA
+  }
+  
+  df$v_dontneed_reason_alreadyhad[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
+  df$v_dontneed_reason_dontspendtime[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
+  df$v_dontneed_reason_nothighrisk[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
+  df$v_dontneed_reason_precautions[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
+  df$v_dontneed_reason_notserious[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
+  df$v_dontneed_reason_notbeneficial[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
+  df$v_dontneed_reason_other[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
+  
   
   df$mc_vaccinated_acceptance <- case_when(
     df$v_covid_vaccinated == 1 ~ "vaccinated",
@@ -397,20 +561,32 @@ create_derivative_columns <- function(df) {
   df$b_not_vaccinated_and_hesitant <- df$mc_vaccinated_acceptance == "not vaccinated and hesitant"
   df$b_not_vaccinated_and_did_not_indicate_hesitance_level <- df$mc_vaccinated_acceptance == "not vaccinated and did not indicate hesitance level"
   
+  
+  if ("ms_symptoms" %in% names(df)) {
+    df$individ_fever <- (df$ms_symptoms == 1L)
+    df$individ_sore_throat <- (df$ms_symptoms == 9L)
+    df$individ_cough <- (df$ms_symptoms == 2L)
+    df$individ_short_breath <- (df$ms_symptoms == 3L)
+    df$individ_diff_breath <- (df$ms_symptoms == 4L)
+    df$individ_anosmia <- (df$ms_symptoms == 13L)
+    
+    df$individ_cli <- df$individ_fever & (
+      df$individ_cough | df$individ_short_breath | df$individ_diff_breath
+    )
+    df$individ_ili <- df$individ_fever & (df$individ_sore_throat | df$individ_cough)
+    
+  } else {
+    df$individ_cli <- NA
+    df$individ_ili <- NA
+  }
+  
+  
   if ("mc_concerned_sideeffects" %in% names(df)) {	
     df$b_concerned_sideeffects <- as.numeric(	
       df$mc_concerned_sideeffects == 1 | df$mc_concerned_sideeffects == 2	
     )	
   } else {	
     df$b_concerned_sideeffects <- NA_real_	
-  }
-
-  if ("mc_concerned_sideeffects" %in% names(df)) {
-    df$b_concerned_sideeffects <- as.numeric(
-      df$mc_concerned_sideeffects == 1 | df$mc_concerned_sideeffects == 2
-    )
-  } else {
-    df$b_concerned_sideeffects <- NA_real_
   }
 
   df$b_hesitant_sideeffects <- case_when(
