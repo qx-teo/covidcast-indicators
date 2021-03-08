@@ -52,32 +52,25 @@ read_contingency_params <- function(path = "params.json", template_path = "param
 #' 
 #' @export
 update_params <- function(params) {
-  if ( !is.null(params$start_date) ) {
-    # Use all data within the date range, either as explicitly set or assuming
-    # "now" is the end_date.
-    if (is.null(params$end_time)) {
-      params$end_time <- Sys.time()
-    }
-    date_range <- list(params$start_time, params$end_time)
-    params$input <- get_filenames_in_range(date_range[[1]], date_range[[2]], params)
-
-  } else {
-    if (is.null(params$end_time)) {
-      params$end_time <- Sys.time()
-    }
-    # If end_date is not provided, assume want to use most current full time period,
-    # otherwise use preceding full time period.
-    date_range <- get_range_prev_full_period(as_date(params$end_date), params$aggregate_range)
-    params$input <- get_filenames_in_range(date_range[[1]], date_range[[2]], params)
-    
+  # Fill in end_time, if missing, with current time.
+  if (is.null(params$end_time)) {
+    params$end_time <- Sys.time()
   }
-
+  
+  if ( !is.null(params$start_date) ) {
+    date_range <- list(params$start_time, params$end_time)
+  } else {
+    # If start_date is not provided, assume want to use preceding full time period.
+    date_range <- get_range_prev_full_period(as_date(params$end_date), params$aggregate_range)
+  }
+  
+  params$input <- get_filenames_in_range(date_range[[1]], date_range[[2]], params)
   if (length(params$input) == 0) {
     stop("no input files to read in")
   }
+  
   params$start_time <- date_range[[1]]
   params$end_time <- date_range[[2]]
-
   params$start_date <- as_date(date_range[[1]])
   params$end_date <- as_date(date_range[[2]])
 
