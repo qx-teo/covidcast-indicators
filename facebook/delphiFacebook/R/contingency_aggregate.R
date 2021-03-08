@@ -174,7 +174,7 @@ post_process_aggs <- function(df, aggregations, cw_list) {
   group_cols_to_convert <- group_cols_to_convert[startsWith(group_cols_to_convert, "b_")]
 
   metric_cols_to_convert <- unique(aggregations$metric)
-
+  
   for (col_var in c(group_cols_to_convert, metric_cols_to_convert)) {
     if ( is.null(df[[col_var]]) ) {
       aggregations <- aggregations[aggregations$metric != col_var &
@@ -194,7 +194,7 @@ post_process_aggs <- function(df, aggregations, cw_list) {
       output <- code_multiselect(df, aggregations, col_var)
     } else if (startsWith(col_var, "n_")) { # Numeric free response
       output <- code_numeric_freeresponse(df, aggregations, col_var)
-    } else if (startsWith(col_var, "mc_")) { # Multiple choice
+    } else { # Multiple choice and everything else
       output <- list(df, aggregations)
     }
     

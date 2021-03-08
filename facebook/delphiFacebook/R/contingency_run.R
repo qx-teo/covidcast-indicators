@@ -27,9 +27,10 @@ set_aggs <- function() {
 
   monthly_aggs <- tribble(
     ~name, ~metric, ~group_by, ~compute_fn, ~post_fn,
-    # "pct_cli", "hh_p_cli", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_ili", "hh_p_ili", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    "pct_hh_cmnty_cli", "hh_community_yes", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_cli", "individ_cli", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_ili", "individ_ili", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
@@ -590,6 +591,7 @@ run_contingency_tables_one_period <- function(params, aggregations)
     msg_df("response input data", input_data)
 
     input_data <- merge_responses(input_data, archive)
+    
     data_agg <- create_data_for_aggregation(input_data)
     data_agg <- filter_data_for_aggregation(data_agg, params,
                                               lead_days = params$backfill_days)
