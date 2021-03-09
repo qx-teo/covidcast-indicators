@@ -33,7 +33,7 @@ set_aggs <- function() {
     "pct_anosmia", "individ_anosmia", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     
     "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
@@ -48,6 +48,7 @@ set_aggs <- function() {
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,

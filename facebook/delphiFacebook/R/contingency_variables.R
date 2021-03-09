@@ -220,8 +220,8 @@ remap_responses <- function(df) {
         "3"="25-44", 
         "4"="45-64", 
         "5"="45-64", 
-        "6"="65+", 
-        "7"="65+"),
+        "6"="65-74", 
+        "7"="75+"),
       "default"=NULL,
       "type"="mc"
     ),
@@ -331,6 +331,19 @@ remap_responses <- function(df) {
 #' 
 #' @importFrom dplyr case_when coalesce
 create_derivative_columns <- function(df) {
+  df$mc_agecondensed <- case_when(
+    df$mc_age == "18-24" ~ "18-24", 
+    df$mc_age == "25-44" ~ "25-44", 
+    df$mc_age == "45-64" ~ "45-64",
+    df$mc_age == "65-74" ~ "65+", 
+    df$mc_age == "75+" ~ "65+",
+    TRUE ~ NA_character_
+  )
+  
+  df$b_65plus <- (	
+    df$mc_age == "65-74" | df$mc_age == "75+"	
+  )
+  
   # Make derivative columns.	
   if ("D11" %in% names(df)) {
     df$b_smoke <- case_when(
@@ -358,7 +371,7 @@ create_derivative_columns <- function(df) {
   )
   
   if ( "D11" %in% names(df) && "mc_pregnant" %in% names(df) ) {
-    df$b_any_comorbidity_preg_smoke_obese <- as.numeric(
+    df$b_any_comorbidity2 <- as.numeric(
       df$b_heart_disease == 1 | 
         df$b_cancer == 1 | df$b_chronic_kidney_disease == 1 | 
         df$b_chronic_lung_disease == 1 | df$b_diabetes == 1 | 
@@ -658,17 +671,17 @@ create_derivative_columns <- function(df) {
     df$b_hesitant_trust_politicians <- NA_real_
   }
 
-  df$mc_CDC_race_ethnicity <- case_when(
+  df$mc_race_ethnicity <- case_when(
     df$b_hispanic == 1 ~ "Hispanic",
     df$b_hispanic == 2 & df$mc_race == "American Indian or Alaska Native" ~ "Non-Hispanic American Indian or Alaska Native",
     df$b_hispanic == 2 & df$mc_race == "Asian" ~ "Non-Hispanic Asian",
-    df$b_hispanic == 2 & df$mc_race == "Black or African American" ~ "Non-Hispanic Black",
+    df$b_hispanic == 2 & df$mc_race == "Black or African American" ~ "Non-Hispanic Black or African American",
     df$b_hispanic == 2 & df$mc_race == "Native Hawaiian or Pacific Islander" ~ "Non-Hispanic Native Hawaiian or Pacific Islander",
     df$b_hispanic == 2 & df$mc_race == "White" ~ "Non-Hispanic White",
     df$b_hispanic == 2 & df$mc_race == "Other" ~ "Non-Hispanic other or multiracial",
     TRUE ~ NA_character_
   )
-
+  browser()
   return(df)
 }
 
