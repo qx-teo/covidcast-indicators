@@ -1315,7 +1315,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_age", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_age", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_age", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_age", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     
     
     
@@ -1391,7 +1391,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_65plus", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_65plus", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_65plus", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_65plus", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     
     
     
@@ -1467,7 +1467,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     
     
     ## Race + ethnicity
@@ -1542,7 +1542,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     
     
     
@@ -1618,7 +1618,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     
     
     ## Healthcare workers
@@ -1693,7 +1693,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     
     
     ## Any comorbidity
@@ -1768,7 +1768,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     
     
     ## Any comorbidity 2
@@ -1843,7 +1843,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     
     
     ## Heart disease
@@ -1918,7 +1918,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     
     
     ## Cancer
@@ -1993,7 +1993,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_cancer", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_cancer", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_cancer", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_cancer", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     
     
     ## Kidney disease
@@ -2068,7 +2068,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     
     
     ## Lung disease
@@ -2143,7 +2143,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     
     
     ## Diabetes
@@ -2218,7 +2218,7 @@ set_aggs <- function() {
     "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,    
     "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_diabetes", "nation"), compute_binary, jeffreys_binary
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     
     
     ## Immunocompromised
