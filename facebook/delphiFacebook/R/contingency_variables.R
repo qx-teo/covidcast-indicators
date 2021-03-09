@@ -109,6 +109,8 @@ rename_responses <- function(df) {
     "b_vaccine_likely_politicians" = "v_vaccine_likely_politicians", # Binary version of V4_5
     # Wave 7 additions
     "b_received_2_vaccine_doses" = "v_received_2_vaccine_doses", # Binary version of V2
+    # Wave 10 additions
+    "b_vaccine_likely_doctors" = "v_vaccine_likely_doctors", # Binary version of V4_2
     
     ## multiple choice (mc)
     ## Can only select one of n > 2 choices
@@ -616,7 +618,8 @@ create_derivative_columns <- function(df) {
        "b_vaccine_likely_local_health" %in% names(df) &
        "b_vaccine_likely_who" %in% names(df) &
        "b_vaccine_likely_govt_health" %in% names(df) &
-       "b_vaccine_likely_politicians" %in% names(df) ) {
+       "b_vaccine_likely_politicians" %in% names(df) &
+       "b_vaccine_likely_doctors" %in% names(df) ) {
     df$b_hesitant_trust_fam <- case_when(
       is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
       is.na(df$b_vaccine_likely_friends) == TRUE ~ NA,
@@ -660,6 +663,15 @@ create_derivative_columns <- function(df) {
       df$b_hesitant_cov_vaccine == 0 ~ NA,
       df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_politicians == 1 ~ TRUE,
       df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_politicians == 0 ~ FALSE,
+      TRUE ~ NA
+    )
+    df$b_hesitant_trust_doctors <- case_when(
+      is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
+      is.na(df$b_vaccine_likely_doctors) == TRUE ~ NA,
+      df$wave < 7 ~ NA,
+      df$b_hesitant_cov_vaccine == 0 ~ NA,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_doctors == 1 ~ TRUE,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_doctors == 0 ~ FALSE,
       TRUE ~ NA
     )
     
