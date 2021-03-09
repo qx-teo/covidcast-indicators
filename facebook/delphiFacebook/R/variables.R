@@ -348,7 +348,7 @@ code_vaccines <- function(input_data) {
     input_data$v_vaccine_likely_govt_health <- input_data$V4_4 == 1
     input_data$v_vaccine_likely_politicians <- input_data$V4_5 == 1
     
-    if (wave < 10) {
+    if (wave < 8) {
       input_data$v_vaccine_likely_local_health <- input_data$V4_2 == 1
       input_data$v_vaccine_likely_doctors <- NA_real_
     } else {

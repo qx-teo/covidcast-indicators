@@ -693,7 +693,7 @@ create_derivative_columns <- function(df) {
     df$b_hispanic == 2 & df$mc_race == "Other" ~ "Non-Hispanic other or multiracial",
     TRUE ~ NA_character_
   )
-  browser()
+  
   return(df)
 }
 
