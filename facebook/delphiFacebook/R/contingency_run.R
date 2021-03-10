@@ -18,7 +18,7 @@
 #' which does not modify the data.
 #'
 #' @return named list
-#' 
+#'
 #' @importFrom tibble tribble
 set_aggs <- function() {
   weekly_aggs <- tribble(
@@ -32,35 +32,35 @@ set_aggs <- function() {
     "pct_ili", "hh_p_ili", c("nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("nation"), compute_binary, jeffreys_binary,
@@ -76,7 +76,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("nation"), compute_binary, jeffreys_binary,
@@ -91,52 +91,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## Condensed age + gender
     "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
@@ -152,7 +152,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
@@ -167,51 +167,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Age + gender
     "pct_cli", "hh_p_cli", c("mc_age", "mc_gender", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_age", "mc_gender", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
@@ -227,7 +227,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
@@ -242,52 +242,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## 65+ + gender
     "pct_cli", "hh_p_cli", c("b_65plus", "mc_gender", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_65plus", "mc_gender", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
@@ -303,7 +303,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
@@ -318,53 +318,53 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
-    
+
+
+
+
     ## Condensed age + gender + race + hispanic
     "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
@@ -380,7 +380,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
@@ -395,53 +395,53 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
-    
+
+
+
+
     ## Condensed age + gender + combo race/ethnicity
     "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -457,7 +457,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -472,53 +472,53 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
-    
+
+
+
+
     ## 65+ + gender + combo race/ethnicity
     "pct_cli", "hh_p_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -534,7 +534,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -549,51 +549,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Condensed age + gender + healthcare worker
     "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
@@ -609,7 +609,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
@@ -624,52 +624,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## Condensed age + gender + combo race/ethnicity + healthcare worker
     "pct_cli", "hh_p_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
@@ -685,7 +685,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
@@ -700,53 +700,53 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
-    
+
+
+
+
     ## Condensed age + gender + any comorbidity
     "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
@@ -762,7 +762,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
@@ -777,52 +777,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## Condensed age + gender + combo race/ethnicity + any comorbidity
     "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -838,7 +838,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -853,52 +853,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## Condensed age + gender + any comorbidity 2
     "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
@@ -914,7 +914,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
@@ -929,52 +929,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## Condensed age + gender + combo race/ethnicity + any comorbidity 2
     "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -990,7 +990,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -1005,51 +1005,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Condensed age + gender + any comorbidity 2
     "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
@@ -1065,7 +1065,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
@@ -1080,52 +1080,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## Condensed age + gender + combo race/ethnicity + any comorbidity 2
     "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -1141,7 +1141,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -1156,52 +1156,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## Condensed age
     "pct_cli", "hh_p_cli", c("mc_agecondensed", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_agecondensed", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_agecondensed", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_agecondensed", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_agecondensed", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_agecondensed", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
@@ -1217,7 +1217,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
@@ -1232,51 +1232,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Age
     "pct_cli", "hh_p_cli", c("mc_agecondensed", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_age", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_age", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_age", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_age", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_age", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_age", "nation"), compute_binary, jeffreys_binary,
@@ -1292,7 +1292,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_age", "nation"), compute_binary, jeffreys_binary,
@@ -1307,52 +1307,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_age", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_age", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_age", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_age", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_age", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_age", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_age", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_age", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_age", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_age", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_age", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_age", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_age", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## 65+
     "pct_cli", "hh_p_cli", c("b_65plus", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_65plus", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_65plus", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_65plus", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_65plus", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_65plus", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
@@ -1368,7 +1368,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
@@ -1383,52 +1383,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_65plus", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_65plus", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_65plus", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_65plus", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_65plus", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_65plus", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_65plus", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## Gender
     "pct_cli", "hh_p_cli", c("mc_gender", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_gender", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
@@ -1444,7 +1444,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
@@ -1459,51 +1459,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Race + ethnicity
     "pct_cli", "hh_p_cli", c("mc_race", "b_hispanic", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_race", "b_hispanic", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
@@ -1519,7 +1519,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
@@ -1534,52 +1534,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## Combo race/ethnicity
     "pct_cli", "hh_p_cli", c("mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -1595,7 +1595,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
@@ -1610,51 +1610,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Healthcare workers
     "pct_cli", "hh_p_cli", c("b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
@@ -1670,7 +1670,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
@@ -1685,51 +1685,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Any comorbidity
     "pct_cli", "hh_p_cli", c("b_any_comorbidity", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_any_comorbidity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
@@ -1745,7 +1745,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
@@ -1760,51 +1760,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Any comorbidity 2
     "pct_cli", "hh_p_cli", c("b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
@@ -1820,7 +1820,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
@@ -1835,51 +1835,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Heart disease
     "pct_cli", "hh_p_cli", c("b_heart_disease", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_heart_disease", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_heart_disease", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_heart_disease", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_heart_disease", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_heart_disease", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
@@ -1895,7 +1895,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
@@ -1910,51 +1910,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Cancer
     "pct_cli", "hh_p_cli", c("b_cancer", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_cancer", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_cancer", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_cancer", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_cancer", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_cancer", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
@@ -1970,7 +1970,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
@@ -1985,51 +1985,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_cancer", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_cancer", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_cancer", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_cancer", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_cancer", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_cancer", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_cancer", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Kidney disease
     "pct_cli", "hh_p_cli", c("b_chronic_kidney_disease", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_chronic_kidney_disease", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
@@ -2045,7 +2045,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
@@ -2060,51 +2060,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Lung disease
     "pct_cli", "hh_p_cli", c("b_chronic_lung_disease", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_chronic_lung_disease", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
@@ -2120,7 +2120,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
@@ -2135,51 +2135,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Diabetes
     "pct_cli", "hh_p_cli", c("b_diabetes", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_diabetes", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_diabetes", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_diabetes", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_diabetes", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_diabetes", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
@@ -2195,7 +2195,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
@@ -2210,51 +2210,51 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    
-    
+
+
     ## Immunocompromised
     "pct_cli", "hh_p_cli", c("b_immunocompromised", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_immunocompromised", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_immunocompromised", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_immunocompromised", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_immunocompromised", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_immunocompromised", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
@@ -2270,7 +2270,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
@@ -2285,52 +2285,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## Obese
     "pct_cli", "hh_p_cli", c("b_obese", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_obese", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_obese", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_obese", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_obese", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_obese", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_obese", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_obese", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_obese", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_obese", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_obese", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_obese", "nation"), compute_binary, jeffreys_binary,
@@ -2346,7 +2346,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_obese", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_obese", "nation"), compute_binary, jeffreys_binary,
@@ -2361,52 +2361,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_obese", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_obese", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_obese", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_obese", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_obese", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_obese", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_obese", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_obese", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_obese", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_obese", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_obese", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_obese", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_obese", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_obese", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_obese", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## Pregnant
     "pct_cli", "hh_p_cli", c("b_pregnant", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_pregnant", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_pregnant", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_pregnant", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_pregnant", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_pregnant", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
@@ -2422,7 +2422,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
@@ -2437,52 +2437,52 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
-    
-    
-    
+
+
+
     ## Smoking
     "pct_cli", "hh_p_cli", c("b_smoke", "nation"), compute_numeric, jeffreys_count,
     "pct_ili", "hh_p_ili", c("b_smoke", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_vaccinated", "v_covid_vaccinated", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_accepting", "b_accept_cov_vaccine", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant", "b_hesitant_cov_vaccine", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_smoke", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_smoke", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_probably", "b_accepting_no_probably", c("b_smoke", "nation"), compute_binary, jeffreys_multinomial,
     "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_smoke", "nation"), compute_binary, jeffreys_multinomial,
-    
+
     "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
@@ -2498,7 +2498,7 @@ set_aggs <- function() {
     "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_barrier_other", "v_hesitancy_reason_other", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
-    
+
     "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
@@ -2513,368 +2513,5015 @@ set_aggs <- function() {
     "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_smoke", "nation"), compute_binary, jeffreys_binary,    
-    
-    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_smoke", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_smoke", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_smoke", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_smoke", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_smoke", "nation"), compute_binary, jeffreys_binary,    
-    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_smoke", "nation"), compute_binary, jeffreys_binary,    
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
-    
-  
-    # ### Topline report aggregates
-    # # Nation
-    # "pct_vaccinated", "v_covid_vaccinated", c("nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("nation"), compute_binary, jeffreys_multinomial,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("nation"), compute_binary, jeffreys_binary,
-    # 
-    # # State
-    # "pct_vaccinated", "v_covid_vaccinated", c("state"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("state"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("state"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("state"), compute_binary, jeffreys_multinomial,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("state"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("state"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("state"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("state"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("state"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("state"), compute_binary, jeffreys_binary,
-    # 
-    # # Demographic breakdowns
-    # "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "mc_CDC_race_ethnicity", "b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_age", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_age", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("mc_age", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_age", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_gender", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_gender", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("mc_gender", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("mc_CDC_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_any_comorbidity_preg_smoke_obese", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("b_heart_disease", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_heart_disease", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_heart_disease", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("b_heart_disease", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("b_cancer", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_cancer", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_cancer", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("b_cancer", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("b_diabetes", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_diabetes", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_diabetes", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("b_diabetes", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
-    # 
-    # "pct_vaccinated", "v_covid_vaccinated", c("b_immunocompromised", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_accepting", "b_not_vaccinated_and_accepting", c("b_immunocompromised", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_hesitant", "b_not_vaccinated_and_hesitant", c("b_immunocompromised", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_not_vaccinated_and_did_not_indicate_hesitance_level", "b_not_vaccinated_and_did_not_indicate_hesitance_level", c("b_immunocompromised", "nation"), compute_binary, jeffreys_multinomial,
-    # "pct_twodoses", "b_received_2_vaccine_doses", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_accepting", "b_accept_cov_vaccine", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_fam", "b_vaccine_likely_friends", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_healthcare", "b_vaccine_likely_local_health", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_who", "b_vaccine_likely_who", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_govt", "b_vaccine_likely_govt_health", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
-    # "pct_trust_politicians", "b_vaccine_likely_politicians", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
+
+
+
+    ## State-only
+    "pct_cli", "hh_p_cli", c("state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("state"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age + gender
+    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Age + gender
+    "pct_cli", "hh_p_cli", c("mc_age", "mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_age", "mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## 65+ + gender
+    "pct_cli", "hh_p_cli", c("b_65plus", "mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_65plus", "mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
+
+
+
+
+    ## Condensed age + gender + race + hispanic
+    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+
+
+
+    ## Condensed age + gender + combo race/ethnicity
+    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+
+
+
+    ## 65+ + gender + combo race/ethnicity
+    "pct_cli", "hh_p_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Condensed age + gender + healthcare worker
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age + gender + combo race/ethnicity + healthcare worker
+    "pct_cli", "hh_p_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+
+
+
+    ## Condensed age + gender + any comorbidity
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age + gender + combo race/ethnicity + any comorbidity
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age + gender + any comorbidity 2
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age + gender + combo race/ethnicity + any comorbidity 2
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Condensed age + gender + any comorbidity 2
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age + gender + combo race/ethnicity + any comorbidity 2
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age
+    "pct_cli", "hh_p_cli", c("mc_agecondensed", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_agecondensed", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_agecondensed", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_agecondensed", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_agecondensed", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_agecondensed", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Age
+    "pct_cli", "hh_p_cli", c("mc_agecondensed", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_age", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_age", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_age", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_age", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_age", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_age", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_age", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_age", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_age", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_age", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_age", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_age", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_age", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## 65+
+    "pct_cli", "hh_p_cli", c("b_65plus", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_65plus", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_65plus", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_65plus", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_65plus", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_65plus", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_65plus", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## Gender
+    "pct_cli", "hh_p_cli", c("mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Race + ethnicity
+    "pct_cli", "hh_p_cli", c("mc_race", "b_hispanic", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_race", "b_hispanic", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## Combo race/ethnicity
+    "pct_cli", "hh_p_cli", c("mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Healthcare workers
+    "pct_cli", "hh_p_cli", c("b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Any comorbidity
+    "pct_cli", "hh_p_cli", c("b_any_comorbidity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_any_comorbidity", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_any_comorbidity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_any_comorbidity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_any_comorbidity", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_any_comorbidity", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Any comorbidity 2
+    "pct_cli", "hh_p_cli", c("b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Heart disease
+    "pct_cli", "hh_p_cli", c("b_heart_disease", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_heart_disease", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_heart_disease", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_heart_disease", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_heart_disease", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_heart_disease", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Cancer
+    "pct_cli", "hh_p_cli", c("b_cancer", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_cancer", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_cancer", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_cancer", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_cancer", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_cancer", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_cancer", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Kidney disease
+    "pct_cli", "hh_p_cli", c("b_chronic_kidney_disease", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_chronic_kidney_disease", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Lung disease
+    "pct_cli", "hh_p_cli", c("b_chronic_lung_disease", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_chronic_lung_disease", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Diabetes
+    "pct_cli", "hh_p_cli", c("b_diabetes", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_diabetes", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_diabetes", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_diabetes", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_diabetes", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_diabetes", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
+
+
+    ## Immunocompromised
+    "pct_cli", "hh_p_cli", c("b_immunocompromised", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_immunocompromised", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_immunocompromised", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_immunocompromised", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_immunocompromised", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_immunocompromised", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## Obese
+    "pct_cli", "hh_p_cli", c("b_obese", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_obese", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_obese", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_obese", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_obese", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_obese", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_obese", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_obese", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_obese", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_obese", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_obese", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_obese", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_obese", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_obese", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_obese", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## Pregnant
+    "pct_cli", "hh_p_cli", c("b_pregnant", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_pregnant", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_pregnant", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_pregnant", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_pregnant", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_pregnant", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
+
+
+
+    ## Smoking
+    "pct_cli", "hh_p_cli", c("b_smoke", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_smoke", "state"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_smoke", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_smoke", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_smoke", "state"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_smoke", "state"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_smoke", "state"), compute_binary, jeffreys_binary,
+
+
+    ## County-only
+    "pct_cli", "hh_p_cli", c("county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("county"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age + gender
+    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Age + gender
+    "pct_cli", "hh_p_cli", c("mc_age", "mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_age", "mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## 65+ + gender
+    "pct_cli", "hh_p_cli", c("b_65plus", "mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_65plus", "mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
+
+
+
+
+    ## Condensed age + gender + race + hispanic
+    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+
+
+
+    ## Condensed age + gender + combo race/ethnicity
+    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+
+
+
+    ## 65+ + gender + combo race/ethnicity
+    "pct_cli", "hh_p_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Condensed age + gender + healthcare worker
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age + gender + combo race/ethnicity + healthcare worker
+    "pct_cli", "hh_p_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+
+
+
+    ## Condensed age + gender + any comorbidity
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age + gender + combo race/ethnicity + any comorbidity
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age + gender + any comorbidity 2
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age + gender + combo race/ethnicity + any comorbidity 2
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Condensed age + gender + any comorbidity 2
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age + gender + combo race/ethnicity + any comorbidity 2
+    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## Condensed age
+    "pct_cli", "hh_p_cli", c("mc_agecondensed", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_agecondensed", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_agecondensed", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_agecondensed", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_agecondensed", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_agecondensed", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Age
+    "pct_cli", "hh_p_cli", c("mc_agecondensed", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_age", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_age", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_age", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_age", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_age", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_age", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_age", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_age", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_age", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_age", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_age", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_age", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_age", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_age", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## 65+
+    "pct_cli", "hh_p_cli", c("b_65plus", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_65plus", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_65plus", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_65plus", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_65plus", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_65plus", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_65plus", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## Gender
+    "pct_cli", "hh_p_cli", c("mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_gender", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_gender", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_gender", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_gender", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_gender", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Race + ethnicity
+    "pct_cli", "hh_p_cli", c("mc_race", "b_hispanic", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_race", "b_hispanic", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## Combo race/ethnicity
+    "pct_cli", "hh_p_cli", c("mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Healthcare workers
+    "pct_cli", "hh_p_cli", c("b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Any comorbidity
+    "pct_cli", "hh_p_cli", c("b_any_comorbidity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_any_comorbidity", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_any_comorbidity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_any_comorbidity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_any_comorbidity", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_any_comorbidity", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Any comorbidity 2
+    "pct_cli", "hh_p_cli", c("b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Heart disease
+    "pct_cli", "hh_p_cli", c("b_heart_disease", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_heart_disease", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_heart_disease", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_heart_disease", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_heart_disease", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_heart_disease", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Cancer
+    "pct_cli", "hh_p_cli", c("b_cancer", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_cancer", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_cancer", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_cancer", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_cancer", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_cancer", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_cancer", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Kidney disease
+    "pct_cli", "hh_p_cli", c("b_chronic_kidney_disease", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_chronic_kidney_disease", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Lung disease
+    "pct_cli", "hh_p_cli", c("b_chronic_lung_disease", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_chronic_lung_disease", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Diabetes
+    "pct_cli", "hh_p_cli", c("b_diabetes", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_diabetes", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_diabetes", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_diabetes", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_diabetes", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_diabetes", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
+
+
+    ## Immunocompromised
+    "pct_cli", "hh_p_cli", c("b_immunocompromised", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_immunocompromised", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_immunocompromised", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_immunocompromised", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_immunocompromised", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_immunocompromised", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## Obese
+    "pct_cli", "hh_p_cli", c("b_obese", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_obese", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_obese", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_obese", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_obese", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_obese", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_obese", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_obese", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_obese", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_obese", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_obese", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_obese", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_obese", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_obese", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_obese", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## Pregnant
+    "pct_cli", "hh_p_cli", c("b_pregnant", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_pregnant", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_pregnant", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_pregnant", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_pregnant", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_pregnant", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
+
+
+
+    ## Smoking
+    "pct_cli", "hh_p_cli", c("b_smoke", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "hh_p_ili", c("b_smoke", "county"), compute_numeric, jeffreys_count,
+    "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_anosmia", "individ_anosmia", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+
+    "pct_vaccinated", "v_covid_vaccinated", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_received_2_vaccine_doses", "b_received_2_vaccine_doses", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_accepting", "b_accept_cov_vaccine", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccinated_or_accept", "v_covid_vaccinated_or_accept", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+
+    "pct_accepting_yes_definitely", "b_accepting_yes_definitely", c("b_smoke", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_yes_probably", "b_accepting_yes_probably", c("b_smoke", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_probably", "b_accepting_no_probably", c("b_smoke", "county"), compute_binary, jeffreys_multinomial,
+    "pct_accepting_no_definitely", "b_accepting_no_definitely", c("b_smoke", "county"), compute_binary, jeffreys_multinomial,
+
+    "pct_vaccine_likely_friends", "b_vaccine_likely_friends", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_hcw", "b_vaccine_likely_local_health", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_who", "b_vaccine_likely_who", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_govt", "b_vaccine_likely_govt_health", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_politicians", "b_vaccine_likely_politicians", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_vaccine_likely_doctors", "b_vaccine_likely_doctors", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+
+    "pct_concerned_sideeffects", "b_concerned_sideeffects", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_sideeffects", "b_hesitant_sideeffects", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_trust_fam", "b_hesitant_trust_fam", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_healthcare", "b_hesitant_trust_healthcare", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_who", "b_hesitant_trust_who", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_govt", "b_hesitant_trust_govt", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_politicians", "b_hesitant_trust_politicians", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_trust_doctors", "b_hesitant_trust_doctors", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+
+    "pct_barrier_sideeffects", "v_hesitancy_reason_sideeffects", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_allergy", "v_hesitancy_reason_allergic", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wontwork", "v_hesitancy_reason_ineffective", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontneed", "v_hesitancy_reason_unnecessary", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_notrec", "v_hesitancy_reason_not_recommended", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_wait", "v_hesitancy_reason_wait_safety", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_otherpeople", "v_hesitancy_reason_low_priority", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_cost", "v_hesitancy_reason_cost", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_trustgovt", "v_hesitancy_reason_distrust_gov", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_religion", "v_hesitancy_reason_religious", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_health", "v_hesitancy_reason_health_condition", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_pregnant", "v_hesitancy_reason_pregnant", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_barrier_other", "v_hesitancy_reason_other", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_sideeffects", "v_hesitancy_reason_sideeffects_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_allergy", "v_hesitancy_reason_allergic_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wontwork", "v_hesitancy_reason_ineffective_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed", "v_hesitancy_reason_unnecessary_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontlike", "v_hesitancy_reason_dislike_vaccines_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_notrec", "v_hesitancy_reason_not_recommended_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_wait", "v_hesitancy_reason_wait_safety_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_otherpeople", "v_hesitancy_reason_low_priority_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_cost", "v_hesitancy_reason_cost_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustvax", "v_hesitancy_reason_distrust_vaccines_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_trustgovt", "v_hesitancy_reason_distrust_gov_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_religion", "v_hesitancy_reason_religious_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_health", "v_hesitancy_reason_health_condition_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_pregnant", "v_hesitancy_reason_pregnant_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_other", "v_hesitancy_reason_other_5bc", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+
+    "pct_hesitant_barrier_dontneed_alreadyhad", "v_dontneed_reason_alreadyhad", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_dontspendtime", "v_dontneed_reason_dontspendtime", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_nothighrisk", "v_dontneed_reason_nothighrisk", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_precautions", "v_dontneed_reason_precautions", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notserious", "v_dontneed_reason_notserious", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_notbeneficial", "v_dontneed_reason_notbeneficial", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+    "pct_hesitant_barrier_dontneed_other", "v_dontneed_reason_other", c("b_smoke", "county"), compute_binary, jeffreys_binary,
+
+
 
   )
-  
+
   return(list("week"=monthly_aggs, "month"=monthly_aggs))
 
 }
@@ -2885,7 +7532,7 @@ set_aggs <- function() {
 #' @param params    Params object produced by read_params
 #'
 #' @return none
-#' 
+#'
 #' @importFrom parallel detectCores
 #'
 #' @export
@@ -2895,7 +7542,7 @@ run_contingency_tables <- function(params) {
   ## because we are greedy and this will typically run on a server.
   if (params$parallel) {
     cores <- detectCores()
-    
+
     if (is.na(cores)) {
       warning("Could not detect the number of CPU cores; parallel mode disabled")
       params$parallel <- FALSE
@@ -2904,7 +7551,7 @@ run_contingency_tables <- function(params) {
       msg_plain(paste0("Running on ", cores, " cores"))
     }
   }
-  
+
   if (params$aggregate_range == "week") {
     run_contingency_tables_many_periods(params, aggs$week)
   } else if (params$aggregate_range == "month") {
@@ -2949,7 +7596,7 @@ run_contingency_tables_many_periods <- function(params, aggregations)
     } else if (is.null(params$aggregate_range)) {
       stop("aggregate_range setting must be provided in params")
     }
-    
+
     params$end_date <- ifelse(
       is.null(params$end_date), as.character(Sys.Date()), params$end_date
     )
@@ -2960,20 +7607,20 @@ run_contingency_tables_many_periods <- function(params, aggregations)
 
     for (end_date in end_dates) {
       period_params <- params
-      
+
       # Update start/end date and time.
       period_params$end_date <- end_date
       if ( !(end_date == end_dates[1]) ) {
         period_params$start_date <- NULL
       }
-      
+
       period_params$start_time <- ymd_hms(
         sprintf("%s 00:00:00", period_params$start_date), tz = tz_to
       )
       period_params$end_time <- ymd_hms(
         sprintf("%s 23:59:59", period_params$end_date), tz = tz_to
       )
-      
+
       run_contingency_tables_one_period(period_params, aggregations)
     }
   } else {
@@ -3002,7 +7649,7 @@ run_contingency_tables_one_period <- function(params, aggregations)
 {
   params <- update_params(params)
   aggregations <- verify_aggs(aggregations)
-  
+
   msg_plain(paste0("Producing aggregates for ", params$start_date, " through ", params$end_date))
 
   if (nrow(aggregations) > 0) {
@@ -3015,7 +7662,7 @@ run_contingency_tables_one_period <- function(params, aggregations)
     msg_df("response input data", input_data)
 
     input_data <- merge_responses(input_data, archive)
-    
+
     data_agg <- create_data_for_aggregation(input_data)
     data_agg <- filter_data_for_aggregation(data_agg, params,
                                               lead_days = params$backfill_days)
