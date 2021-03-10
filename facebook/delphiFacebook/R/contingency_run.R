@@ -28,8 +28,8 @@ set_aggs <- function() {
   monthly_aggs <- tribble(
     ~name, ~metric, ~group_by, ~compute_fn, ~post_fn,
     ## Nation-only
-    "pct_cli", "hh_p_cli", c("nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("nation"), compute_binary, jeffreys_binary,
 
@@ -104,8 +104,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "mc_gender", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_agecondensed", "mc_gender", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "nation"), compute_binary, jeffreys_binary,
 
@@ -179,8 +179,8 @@ set_aggs <- function() {
 
 
     ## Age + gender
-    "pct_cli", "hh_p_cli", c("mc_age", "mc_gender", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_age", "mc_gender", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_age", "mc_gender", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_age", "mc_gender", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_age", "mc_gender", "nation"), compute_binary, jeffreys_binary,
 
@@ -255,8 +255,8 @@ set_aggs <- function() {
 
 
     ## 65+ + gender
-    "pct_cli", "hh_p_cli", c("b_65plus", "mc_gender", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_65plus", "mc_gender", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_65plus", "mc_gender", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_65plus", "mc_gender", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_65plus", "mc_gender", "nation"), compute_binary, jeffreys_binary,
 
@@ -332,8 +332,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + race + hispanic
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
 
@@ -409,8 +409,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
 
@@ -486,8 +486,8 @@ set_aggs <- function() {
 
 
     ## 65+ + gender + combo race/ethnicity
-    "pct_cli", "hh_p_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "b_65plus", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
 
@@ -561,8 +561,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + healthcare worker
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
 
@@ -637,8 +637,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity + healthcare worker
-    "pct_cli", "hh_p_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
 
@@ -714,8 +714,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + any comorbidity
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
 
@@ -790,8 +790,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity + any comorbidity
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
 
@@ -866,8 +866,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + any comorbidity 2
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
 
@@ -942,8 +942,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity + any comorbidity 2
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
 
@@ -1017,8 +1017,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + any comorbidity 2
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
 
@@ -1093,8 +1093,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity + any comorbidity 2
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
 
@@ -1169,8 +1169,8 @@ set_aggs <- function() {
 
 
     ## Condensed age
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_agecondensed", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_agecondensed", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "nation"), compute_binary, jeffreys_binary,
 
@@ -1244,8 +1244,8 @@ set_aggs <- function() {
 
 
     ## Age
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_age", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_age", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_age", "nation"), compute_binary, jeffreys_binary,
 
@@ -1320,8 +1320,8 @@ set_aggs <- function() {
 
 
     ## 65+
-    "pct_cli", "hh_p_cli", c("b_65plus", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_65plus", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_65plus", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_65plus", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_65plus", "nation"), compute_binary, jeffreys_binary,
 
@@ -1396,8 +1396,8 @@ set_aggs <- function() {
 
 
     ## Gender
-    "pct_cli", "hh_p_cli", c("mc_gender", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "nation"), compute_binary, jeffreys_binary,
 
@@ -1471,8 +1471,8 @@ set_aggs <- function() {
 
 
     ## Race + ethnicity
-    "pct_cli", "hh_p_cli", c("mc_race", "b_hispanic", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_race", "b_hispanic", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_race", "b_hispanic", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_race", "b_hispanic", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_race", "b_hispanic", "nation"), compute_binary, jeffreys_binary,
 
@@ -1547,8 +1547,8 @@ set_aggs <- function() {
 
 
     ## Combo race/ethnicity
-    "pct_cli", "hh_p_cli", c("mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_race_ethnicity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
 
@@ -1622,8 +1622,8 @@ set_aggs <- function() {
 
 
     ## Healthcare workers
-    "pct_cli", "hh_p_cli", c("b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_work_in_healthcare", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_work_in_healthcare", "nation"), compute_binary, jeffreys_binary,
 
@@ -1697,8 +1697,8 @@ set_aggs <- function() {
 
 
     ## Any comorbidity
-    "pct_cli", "hh_p_cli", c("b_any_comorbidity", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_any_comorbidity", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_any_comorbidity", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_any_comorbidity", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_any_comorbidity", "nation"), compute_binary, jeffreys_binary,
 
@@ -1772,8 +1772,8 @@ set_aggs <- function() {
 
 
     ## Any comorbidity 2
-    "pct_cli", "hh_p_cli", c("b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_any_comorbidity2", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_any_comorbidity2", "nation"), compute_binary, jeffreys_binary,
 
@@ -1847,8 +1847,8 @@ set_aggs <- function() {
 
 
     ## Heart disease
-    "pct_cli", "hh_p_cli", c("b_heart_disease", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_heart_disease", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_heart_disease", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_heart_disease", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_heart_disease", "nation"), compute_binary, jeffreys_binary,
 
@@ -1922,8 +1922,8 @@ set_aggs <- function() {
 
 
     ## Cancer
-    "pct_cli", "hh_p_cli", c("b_cancer", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_cancer", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_cancer", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_cancer", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_cancer", "nation"), compute_binary, jeffreys_binary,
 
@@ -1997,8 +1997,8 @@ set_aggs <- function() {
 
 
     ## Kidney disease
-    "pct_cli", "hh_p_cli", c("b_chronic_kidney_disease", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_chronic_kidney_disease", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_chronic_kidney_disease", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_chronic_kidney_disease", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_chronic_kidney_disease", "nation"), compute_binary, jeffreys_binary,
 
@@ -2072,8 +2072,8 @@ set_aggs <- function() {
 
 
     ## Lung disease
-    "pct_cli", "hh_p_cli", c("b_chronic_lung_disease", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_chronic_lung_disease", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_chronic_lung_disease", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_chronic_lung_disease", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_chronic_lung_disease", "nation"), compute_binary, jeffreys_binary,
 
@@ -2147,8 +2147,8 @@ set_aggs <- function() {
 
 
     ## Diabetes
-    "pct_cli", "hh_p_cli", c("b_diabetes", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_diabetes", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_diabetes", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_diabetes", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_diabetes", "nation"), compute_binary, jeffreys_binary,
 
@@ -2222,8 +2222,8 @@ set_aggs <- function() {
 
 
     ## Immunocompromised
-    "pct_cli", "hh_p_cli", c("b_immunocompromised", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_immunocompromised", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_immunocompromised", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_immunocompromised", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_immunocompromised", "nation"), compute_binary, jeffreys_binary,
 
@@ -2298,8 +2298,8 @@ set_aggs <- function() {
 
 
     ## Obese
-    "pct_cli", "hh_p_cli", c("b_obese", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_obese", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_obese", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_obese", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_obese", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_obese", "nation"), compute_binary, jeffreys_binary,
 
@@ -2374,8 +2374,8 @@ set_aggs <- function() {
 
 
     ## Pregnant
-    "pct_cli", "hh_p_cli", c("b_pregnant", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_pregnant", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_pregnant", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_pregnant", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_pregnant", "nation"), compute_binary, jeffreys_binary,
 
@@ -2450,8 +2450,8 @@ set_aggs <- function() {
 
 
     ## Smoking
-    "pct_cli", "hh_p_cli", c("b_smoke", "nation"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_smoke", "nation"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_smoke", "nation"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_smoke", "nation"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_smoke", "nation"), compute_binary, jeffreys_binary,
 
@@ -2526,8 +2526,8 @@ set_aggs <- function() {
 
 
     ## State-only
-    "pct_cli", "hh_p_cli", c("state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("state"), compute_binary, jeffreys_binary,
 
@@ -2602,8 +2602,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_agecondensed", "mc_gender", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "state"), compute_binary, jeffreys_binary,
 
@@ -2677,8 +2677,8 @@ set_aggs <- function() {
 
 
     ## Age + gender
-    "pct_cli", "hh_p_cli", c("mc_age", "mc_gender", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_age", "mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_age", "mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_age", "mc_gender", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_age", "mc_gender", "state"), compute_binary, jeffreys_binary,
 
@@ -2753,8 +2753,8 @@ set_aggs <- function() {
 
 
     ## 65+ + gender
-    "pct_cli", "hh_p_cli", c("b_65plus", "mc_gender", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_65plus", "mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_65plus", "mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_65plus", "mc_gender", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_65plus", "mc_gender", "state"), compute_binary, jeffreys_binary,
 
@@ -2830,8 +2830,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + race + hispanic
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
 
@@ -2907,8 +2907,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
 
@@ -2984,8 +2984,8 @@ set_aggs <- function() {
 
 
     ## 65+ + gender + combo race/ethnicity
-    "pct_cli", "hh_p_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "b_65plus", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
 
@@ -3059,8 +3059,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + healthcare worker
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
 
@@ -3135,8 +3135,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity + healthcare worker
-    "pct_cli", "hh_p_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
 
@@ -3212,8 +3212,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + any comorbidity
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
 
@@ -3288,8 +3288,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity + any comorbidity
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
 
@@ -3364,8 +3364,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + any comorbidity 2
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
 
@@ -3440,8 +3440,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity + any comorbidity 2
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
 
@@ -3515,8 +3515,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + any comorbidity 2
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
 
@@ -3591,8 +3591,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity + any comorbidity 2
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
 
@@ -3667,8 +3667,8 @@ set_aggs <- function() {
 
 
     ## Condensed age
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_agecondensed", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_agecondensed", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "state"), compute_binary, jeffreys_binary,
 
@@ -3742,8 +3742,8 @@ set_aggs <- function() {
 
 
     ## Age
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_age", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_age", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_age", "state"), compute_binary, jeffreys_binary,
 
@@ -3818,8 +3818,8 @@ set_aggs <- function() {
 
 
     ## 65+
-    "pct_cli", "hh_p_cli", c("b_65plus", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_65plus", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_65plus", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_65plus", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_65plus", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_65plus", "state"), compute_binary, jeffreys_binary,
 
@@ -3894,8 +3894,8 @@ set_aggs <- function() {
 
 
     ## Gender
-    "pct_cli", "hh_p_cli", c("mc_gender", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "state"), compute_binary, jeffreys_binary,
 
@@ -3969,8 +3969,8 @@ set_aggs <- function() {
 
 
     ## Race + ethnicity
-    "pct_cli", "hh_p_cli", c("mc_race", "b_hispanic", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_race", "b_hispanic", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_race", "b_hispanic", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_race", "b_hispanic", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_race", "b_hispanic", "state"), compute_binary, jeffreys_binary,
 
@@ -4045,8 +4045,8 @@ set_aggs <- function() {
 
 
     ## Combo race/ethnicity
-    "pct_cli", "hh_p_cli", c("mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_race_ethnicity", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_race_ethnicity", "state"), compute_binary, jeffreys_binary,
 
@@ -4120,8 +4120,8 @@ set_aggs <- function() {
 
 
     ## Healthcare workers
-    "pct_cli", "hh_p_cli", c("b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_work_in_healthcare", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_work_in_healthcare", "state"), compute_binary, jeffreys_binary,
 
@@ -4195,8 +4195,8 @@ set_aggs <- function() {
 
 
     ## Any comorbidity
-    "pct_cli", "hh_p_cli", c("b_any_comorbidity", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_any_comorbidity", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_any_comorbidity", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_any_comorbidity", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_any_comorbidity", "state"), compute_binary, jeffreys_binary,
 
@@ -4270,8 +4270,8 @@ set_aggs <- function() {
 
 
     ## Any comorbidity 2
-    "pct_cli", "hh_p_cli", c("b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_any_comorbidity2", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_any_comorbidity2", "state"), compute_binary, jeffreys_binary,
 
@@ -4345,8 +4345,8 @@ set_aggs <- function() {
 
 
     ## Heart disease
-    "pct_cli", "hh_p_cli", c("b_heart_disease", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_heart_disease", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_heart_disease", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_heart_disease", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_heart_disease", "state"), compute_binary, jeffreys_binary,
 
@@ -4420,8 +4420,8 @@ set_aggs <- function() {
 
 
     ## Cancer
-    "pct_cli", "hh_p_cli", c("b_cancer", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_cancer", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_cancer", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_cancer", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_cancer", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_cancer", "state"), compute_binary, jeffreys_binary,
 
@@ -4495,8 +4495,8 @@ set_aggs <- function() {
 
 
     ## Kidney disease
-    "pct_cli", "hh_p_cli", c("b_chronic_kidney_disease", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_chronic_kidney_disease", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_chronic_kidney_disease", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_chronic_kidney_disease", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_chronic_kidney_disease", "state"), compute_binary, jeffreys_binary,
 
@@ -4570,8 +4570,8 @@ set_aggs <- function() {
 
 
     ## Lung disease
-    "pct_cli", "hh_p_cli", c("b_chronic_lung_disease", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_chronic_lung_disease", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_chronic_lung_disease", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_chronic_lung_disease", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_chronic_lung_disease", "state"), compute_binary, jeffreys_binary,
 
@@ -4645,8 +4645,8 @@ set_aggs <- function() {
 
 
     ## Diabetes
-    "pct_cli", "hh_p_cli", c("b_diabetes", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_diabetes", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_diabetes", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_diabetes", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_diabetes", "state"), compute_binary, jeffreys_binary,
 
@@ -4720,8 +4720,8 @@ set_aggs <- function() {
 
 
     ## Immunocompromised
-    "pct_cli", "hh_p_cli", c("b_immunocompromised", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_immunocompromised", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_immunocompromised", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_immunocompromised", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_immunocompromised", "state"), compute_binary, jeffreys_binary,
 
@@ -4796,8 +4796,8 @@ set_aggs <- function() {
 
 
     ## Obese
-    "pct_cli", "hh_p_cli", c("b_obese", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_obese", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_obese", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_obese", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_obese", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_obese", "state"), compute_binary, jeffreys_binary,
 
@@ -4872,8 +4872,8 @@ set_aggs <- function() {
 
 
     ## Pregnant
-    "pct_cli", "hh_p_cli", c("b_pregnant", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_pregnant", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_pregnant", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_pregnant", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_pregnant", "state"), compute_binary, jeffreys_binary,
 
@@ -4948,8 +4948,8 @@ set_aggs <- function() {
 
 
     ## Smoking
-    "pct_cli", "hh_p_cli", c("b_smoke", "state"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_smoke", "state"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_smoke", "state"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_smoke", "state"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_smoke", "state"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_smoke", "state"), compute_binary, jeffreys_binary,
 
@@ -5023,8 +5023,8 @@ set_aggs <- function() {
 
 
     ## County-only
-    "pct_cli", "hh_p_cli", c("county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("county"), compute_binary, jeffreys_binary,
 
@@ -5099,8 +5099,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_agecondensed", "mc_gender", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "county"), compute_binary, jeffreys_binary,
 
@@ -5174,8 +5174,8 @@ set_aggs <- function() {
 
 
     ## Age + gender
-    "pct_cli", "hh_p_cli", c("mc_age", "mc_gender", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_age", "mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_age", "mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_age", "mc_gender", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_age", "mc_gender", "county"), compute_binary, jeffreys_binary,
 
@@ -5250,8 +5250,8 @@ set_aggs <- function() {
 
 
     ## 65+ + gender
-    "pct_cli", "hh_p_cli", c("b_65plus", "mc_gender", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_65plus", "mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_65plus", "mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_65plus", "mc_gender", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_65plus", "mc_gender", "county"), compute_binary, jeffreys_binary,
 
@@ -5327,8 +5327,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + race + hispanic
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
 
@@ -5404,8 +5404,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "mc_gender", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
 
@@ -5481,8 +5481,8 @@ set_aggs <- function() {
 
 
     ## 65+ + gender + combo race/ethnicity
-    "pct_cli", "hh_p_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "b_65plus", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
 
@@ -5556,8 +5556,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + healthcare worker
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
 
@@ -5632,8 +5632,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity + healthcare worker
-    "pct_cli", "hh_p_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_race_ethnicity", "mc_gender", "mc_agecondensed", "b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
 
@@ -5709,8 +5709,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + any comorbidity
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
 
@@ -5785,8 +5785,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity + any comorbidity
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
 
@@ -5861,8 +5861,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + any comorbidity 2
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
 
@@ -5937,8 +5937,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity + any comorbidity 2
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
 
@@ -6012,8 +6012,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + any comorbidity 2
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
 
@@ -6088,8 +6088,8 @@ set_aggs <- function() {
 
 
     ## Condensed age + gender + combo race/ethnicity + any comorbidity 2
-    "pct_cli", "hh_p_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "mc_agecondensed", "b_any_comorbidity2", "mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
 
@@ -6164,8 +6164,8 @@ set_aggs <- function() {
 
 
     ## Condensed age
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_agecondensed", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_agecondensed", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_agecondensed", "county"), compute_binary, jeffreys_binary,
 
@@ -6239,8 +6239,8 @@ set_aggs <- function() {
 
 
     ## Age
-    "pct_cli", "hh_p_cli", c("mc_agecondensed", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_age", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_agecondensed", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_age", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_age", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_age", "county"), compute_binary, jeffreys_binary,
 
@@ -6315,8 +6315,8 @@ set_aggs <- function() {
 
 
     ## 65+
-    "pct_cli", "hh_p_cli", c("b_65plus", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_65plus", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_65plus", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_65plus", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_65plus", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_65plus", "county"), compute_binary, jeffreys_binary,
 
@@ -6391,8 +6391,8 @@ set_aggs <- function() {
 
 
     ## Gender
-    "pct_cli", "hh_p_cli", c("mc_gender", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_gender", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_gender", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_gender", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_gender", "county"), compute_binary, jeffreys_binary,
 
@@ -6466,8 +6466,8 @@ set_aggs <- function() {
 
 
     ## Race + ethnicity
-    "pct_cli", "hh_p_cli", c("mc_race", "b_hispanic", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_race", "b_hispanic", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_race", "b_hispanic", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_race", "b_hispanic", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_race", "b_hispanic", "county"), compute_binary, jeffreys_binary,
 
@@ -6542,8 +6542,8 @@ set_aggs <- function() {
 
 
     ## Combo race/ethnicity
-    "pct_cli", "hh_p_cli", c("mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("mc_race_ethnicity", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("mc_race_ethnicity", "county"), compute_binary, jeffreys_binary,
 
@@ -6617,8 +6617,8 @@ set_aggs <- function() {
 
 
     ## Healthcare workers
-    "pct_cli", "hh_p_cli", c("b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_work_in_healthcare", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_work_in_healthcare", "county"), compute_binary, jeffreys_binary,
 
@@ -6692,8 +6692,8 @@ set_aggs <- function() {
 
 
     ## Any comorbidity
-    "pct_cli", "hh_p_cli", c("b_any_comorbidity", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_any_comorbidity", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_any_comorbidity", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_any_comorbidity", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_any_comorbidity", "county"), compute_binary, jeffreys_binary,
 
@@ -6767,8 +6767,8 @@ set_aggs <- function() {
 
 
     ## Any comorbidity 2
-    "pct_cli", "hh_p_cli", c("b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_any_comorbidity2", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_any_comorbidity2", "county"), compute_binary, jeffreys_binary,
 
@@ -6842,8 +6842,8 @@ set_aggs <- function() {
 
 
     ## Heart disease
-    "pct_cli", "hh_p_cli", c("b_heart_disease", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_heart_disease", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_heart_disease", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_heart_disease", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_heart_disease", "county"), compute_binary, jeffreys_binary,
 
@@ -6917,8 +6917,8 @@ set_aggs <- function() {
 
 
     ## Cancer
-    "pct_cli", "hh_p_cli", c("b_cancer", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_cancer", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_cancer", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_cancer", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_cancer", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_cancer", "county"), compute_binary, jeffreys_binary,
 
@@ -6992,8 +6992,8 @@ set_aggs <- function() {
 
 
     ## Kidney disease
-    "pct_cli", "hh_p_cli", c("b_chronic_kidney_disease", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_chronic_kidney_disease", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_chronic_kidney_disease", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_chronic_kidney_disease", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_chronic_kidney_disease", "county"), compute_binary, jeffreys_binary,
 
@@ -7067,8 +7067,8 @@ set_aggs <- function() {
 
 
     ## Lung disease
-    "pct_cli", "hh_p_cli", c("b_chronic_lung_disease", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_chronic_lung_disease", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_chronic_lung_disease", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_chronic_lung_disease", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_chronic_lung_disease", "county"), compute_binary, jeffreys_binary,
 
@@ -7142,8 +7142,8 @@ set_aggs <- function() {
 
 
     ## Diabetes
-    "pct_cli", "hh_p_cli", c("b_diabetes", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_diabetes", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_diabetes", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_diabetes", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_diabetes", "county"), compute_binary, jeffreys_binary,
 
@@ -7217,8 +7217,8 @@ set_aggs <- function() {
 
 
     ## Immunocompromised
-    "pct_cli", "hh_p_cli", c("b_immunocompromised", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_immunocompromised", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_immunocompromised", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_immunocompromised", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_immunocompromised", "county"), compute_binary, jeffreys_binary,
 
@@ -7293,8 +7293,8 @@ set_aggs <- function() {
 
 
     ## Obese
-    "pct_cli", "hh_p_cli", c("b_obese", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_obese", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_obese", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_obese", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_obese", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_obese", "county"), compute_binary, jeffreys_binary,
 
@@ -7369,8 +7369,8 @@ set_aggs <- function() {
 
 
     ## Pregnant
-    "pct_cli", "hh_p_cli", c("b_pregnant", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_pregnant", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_pregnant", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_pregnant", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_pregnant", "county"), compute_binary, jeffreys_binary,
 
@@ -7445,8 +7445,8 @@ set_aggs <- function() {
 
 
     ## Smoking
-    "pct_cli", "hh_p_cli", c("b_smoke", "county"), compute_numeric, jeffreys_count,
-    "pct_ili", "hh_p_ili", c("b_smoke", "county"), compute_numeric, jeffreys_count,
+    "pct_cli", "n_hh_prop_cli", c("b_smoke", "county"), compute_numeric, jeffreys_count,
+    "pct_ili", "n_hh_prop_ili", c("b_smoke", "county"), compute_numeric, jeffreys_count,
     "pct_hh_cmnty_cli", "b_hh_or_cmnty_have_cli", c("b_smoke", "county"), compute_binary, jeffreys_binary,
     "pct_anosmia", "individ_anosmia", c("b_smoke", "county"), compute_binary, jeffreys_binary,
 
