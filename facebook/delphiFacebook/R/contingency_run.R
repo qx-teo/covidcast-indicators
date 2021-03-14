@@ -7536,6 +7536,7 @@ set_aggs <- function() {
 #' @export
 run_contingency_tables <- function(params) {
   aggs <- set_aggs()
+
   ## Set default number of cores for mclapply to the total available number,
   ## because we are greedy and this will typically run on a server.
   if (params$parallel) {
@@ -7647,6 +7648,8 @@ run_contingency_tables_one_period <- function(params, aggregations)
 {
   params <- update_params(params)
   aggregations <- verify_aggs(aggregations)
+  
+  msg_plain(paste0("Producing aggregates for ", params$start_date, " through ", params$end_date))
 
   msg_plain(paste0("Producing aggregates for ", params$start_date, " through ", params$end_date))
 

@@ -19,7 +19,8 @@ load_responses_all <- function(params) {
   
   msg_plain(paste0("Loading ", length(params$input), " CSVs"))
   
-  input_data <- mclapply(seq_along(input_data), function(i) {
+  map_fn <- ifelse(params$parallel, mclapply, lapply)
+  input_data <- map_fn(seq_along(input_data), function(i) {
     load_response_one(params$input[i], params)
   })
   
@@ -42,6 +43,7 @@ load_responses_all <- function(params) {
 #' @importFrom rlang .data
 #' @export
 load_response_one <- function(input_filename, params) {
+  msg_plain(paste0("Reading ", input_filename))
   # read the input data; need to deal with column names manually because of header
   full_path <- file.path(params$input_dir, input_filename)
 
@@ -212,6 +214,7 @@ filter_responses <- function(input_data, params) {
                        DistributionChannel != "preview",
                        as.Date(date) <= params$end_date
   )
+
   msg_plain(paste0("Finished filtering data"))
   return(input_data)
 }
@@ -235,7 +238,6 @@ merge_responses <- function(input_data, archive) {
   # result in the input data being used in preference over the archive data.
   # This means that if we run the pipeline, then change the input CSV, running
   # again will used the changed data instead of the archived data.
-  msg_plain(paste0("Combining archive and new input data"))
   data <- bind_rows(input_data, archive$input_data)
   msg_plain(paste0("Sorting by start date"))
   data <- arrange(data, .data$StartDate)
@@ -352,12 +354,21 @@ bodge_v4_translation <- function(input_data) {
   affected <- c("V4_1", "V4_2", "V4_3", "V4_4", "V4_5")
   corrected <- c("V4a_1", "V4a_2", "V4a_3", "V4a_4", "V4a_5")
 
-  # Step 1: For any non-English results, null out V4 responses. There are NAs
-  # because of filtering earlier in the pipeline that incorrectly handles NA, so
-  # also remove these.
-  non_english <- is.na(input_data$UserLanguage) | input_data$UserLanguage != "EN"
-  for (col in affected) {
-    input_data[non_english, col] <- NA
+  if (any(affected %in% names(input_data))) {
+    # This wave is affected by the problem. Step 1: For any non-English results,
+    # null out V4 responses. There are NAs because of filtering earlier in the
+    # pipeline that incorrectly handles NA, so also remove these.
+    non_english <- is.na(input_data$UserLanguage) | input_data$UserLanguage != "EN"
+    for (col in affected) {
+      input_data[non_english, col] <- NA
+    }
+  } else {
+    # This wave does not have V4, only V4a. We will move V4a's responses into V4
+    # below, so users do not need to know about our goof. Ensure the columns
+    # exist so the later code can move data into them.
+    for (col in affected) {
+      input_data[[col]] <- NA
+    }
   }
 
   # Step 2: If this data does not have V4a, stop.
@@ -365,6 +376,8 @@ bodge_v4_translation <- function(input_data) {
     return(input_data)
   }
 
+  # Step 3: Wherever there are values in the new columns, move them to the old
+  # columns.
   for (ii in seq_along(affected)) {
     bad <- affected[ii]
     good <- corrected[ii]

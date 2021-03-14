@@ -192,7 +192,7 @@ rename_responses <- function(df) {
 #'
 #' @return data frame of individual response data with newly mapped columns
 remap_responses <- function(df) {
-  msg_plain(paste0("Mapping response codes to meaningful strings..."))
+  msg_plain(paste0("Mapping response codes to descriptive values..."))
   # Map responses with multiple races selected into a single category.
   if ("D7" %in% names(df)) {
     df[grepl(",", df$D7), "D7"] <- "multiracial"
@@ -411,7 +411,6 @@ create_derivative_columns <- function(df) {
     df$b_accepting_no_definitely <- NA
   }	
   
-  
   if ("V5a" %in% names(df) && "V5b" %in% names(df) && "V5c" %in% names(df)) {
     # introduced in Wave 8
     hesitancy_reasons_a <- split_options(df$V5a)
@@ -605,15 +604,11 @@ create_derivative_columns <- function(df) {
   }
 
   df$b_hesitant_sideeffects <- case_when(
-    is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
-    is.na(df$b_concerned_sideeffects) == TRUE ~ NA,
-    df$wave < 7 ~ NA,
-    df$b_hesitant_cov_vaccine == 0 ~ NA,
-    df$b_hesitant_cov_vaccine == 1 & df$b_concerned_sideeffects == 1 ~ TRUE,
-    df$b_hesitant_cov_vaccine == 1 & df$b_concerned_sideeffects == 0 ~ FALSE,
-    TRUE ~ NA
+    df$b_hesitant_cov_vaccine == 1 & df$b_concerned_sideeffects == 1 ~ 1,
+    df$b_hesitant_cov_vaccine == 1 & df$b_concerned_sideeffects == 0 ~ 0,
+    TRUE ~ NA_real_
   )
-
+  
   if ( "b_vaccine_likely_friends" %in% names(df) &
        "b_vaccine_likely_local_health" %in% names(df) &
        "b_vaccine_likely_who" %in% names(df) &
@@ -621,58 +616,34 @@ create_derivative_columns <- function(df) {
        "b_vaccine_likely_politicians" %in% names(df) &
        "b_vaccine_likely_doctors" %in% names(df) ) {
     df$b_hesitant_trust_fam <- case_when(
-      is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
-      is.na(df$b_vaccine_likely_friends) == TRUE ~ NA,
-      df$wave < 7 ~ NA,
-      df$b_hesitant_cov_vaccine == 0 ~ NA,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_friends == 1 ~ TRUE,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_friends == 0 ~ FALSE,
-      TRUE ~ NA
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_friends == 1 ~ 1,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_friends == 0 ~ 0,
+      TRUE ~ NA_real_
     )
     df$b_hesitant_trust_healthcare <- case_when(
-      is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
-      is.na(df$b_vaccine_likely_local_health) == TRUE ~ NA,
-      df$wave < 7 ~ NA,
-      df$b_hesitant_cov_vaccine == 0 ~ NA,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_local_health == 1 ~ TRUE,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_local_health == 0 ~ FALSE,
-      TRUE ~ NA
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_local_health == 1 ~ 1,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_local_health == 0 ~ 0,
+      TRUE ~ NA_real_
     )
     df$b_hesitant_trust_who <- case_when(
-      is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
-      is.na(df$b_vaccine_likely_who) == TRUE ~ NA,
-      df$wave < 7 ~ NA,
-      df$b_hesitant_cov_vaccine == 0 ~ NA,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_who == 1 ~ TRUE,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_who == 0 ~ FALSE,
-      TRUE ~ NA
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_who == 1 ~ 1,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_who == 0 ~ 0,
+      TRUE ~ NA_real_
     )
     df$b_hesitant_trust_govt <- case_when(
-      is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
-      is.na(df$b_vaccine_likely_govt_health) == TRUE ~ NA,
-      df$wave < 7 ~ NA,
-      df$b_hesitant_cov_vaccine == 0 ~ NA,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_govt_health == 1 ~ TRUE,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_govt_health == 0 ~ FALSE,
-      TRUE ~ NA
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_govt_health == 1 ~ 1,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_govt_health == 0 ~ 0,
+      TRUE ~ NA_real_
     )
     df$b_hesitant_trust_politicians <- case_when(
-      is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
-      is.na(df$b_vaccine_likely_politicians) == TRUE ~ NA,
-      df$wave < 7 ~ NA,
-      df$b_hesitant_cov_vaccine == 0 ~ NA,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_politicians == 1 ~ TRUE,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_politicians == 0 ~ FALSE,
-      TRUE ~ NA
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_politicians == 1 ~ 1,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_politicians == 0 ~ 0,
+      TRUE ~ NA_real_
     )
     df$b_hesitant_trust_doctors <- case_when(
-      is.na(df$b_hesitant_cov_vaccine) == TRUE ~ NA,
-      is.na(df$b_vaccine_likely_doctors) == TRUE ~ NA,
-      df$wave < 7 ~ NA,
-      df$b_hesitant_cov_vaccine == 0 ~ NA,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_doctors == 1 ~ TRUE,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_doctors == 0 ~ FALSE,
-      TRUE ~ NA
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_doctors == 1 ~ 1,
+      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_doctors == 0 ~ 0,
+      TRUE ~ NA_real_
     )
     
   } else {
@@ -719,6 +690,7 @@ create_derivative_columns <- function(df) {
 #'
 #' @return list of data frame of individual response data with newly mapped column
 remap_response <- function(df, col_var, map_old_new, default=NULL, response_type="b") {
+  msg_plain(paste0("Mapping codes for ", col_var))
   if (  is.null(df[[col_var]]) | (response_type == "b" & FALSE %in% df[[col_var]]) | inherits(df[[col_var]], "logical") ) {
     # Column is missing/not in this wave or already in boolean format
     return(df)
@@ -741,7 +713,8 @@ remap_response <- function(df, col_var, map_old_new, default=NULL, response_type
       df$b_obese <- as.numeric(is_selected(split_col, "13"))
     }
     
-    df[[col_var]] <- mcmapply(split_col, FUN=function(row) {
+    map_fn <- ifelse( is.null(getOption("mc.cores")) , mapply, mcmapply)
+    df[[col_var]] <- map_fn(split_col, FUN=function(row) {
       if ( length(row) == 1 && all(is.na(row)) ) {
         NA
       } else {
@@ -820,6 +793,7 @@ code_multiselect <- function(df, aggregations, col_var) {
             sep="_")
       }
     ))
+  
   #### TODO: eval(parse()) here is not the best approach, but I can't find another
   # way to get col_var (a string) to be used as a var that references a column
   # rather than as an actual string. This approach causes a shallow copy to be
