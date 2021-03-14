@@ -7651,8 +7651,6 @@ run_contingency_tables_one_period <- function(params, aggregations)
   
   msg_plain(paste0("Producing aggregates for ", params$start_date, " through ", params$end_date))
 
-  msg_plain(paste0("Producing aggregates for ", params$start_date, " through ", params$end_date))
-
   if (nrow(aggregations) > 0) {
     cw_list <- produce_crosswalk_list(params$static_dir)
     archive <- load_archive(params)
