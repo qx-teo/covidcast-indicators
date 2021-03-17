@@ -246,7 +246,7 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
   assert( length(unique(aggregations$group_by)) == 1 )
 
   if ( length(unique(aggregations$name)) < nrow(aggregations) ) {
-    stop("all aggregations using the same set of grouping variables must have unique names")
+    stop("all aggregations using the same set of groupby variables must have unique names")
   }
 
   ## dplyr complains about joining a data.table, saying it is likely to be
@@ -255,7 +255,16 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
 
   groupby_vars <- aggregations$group_by[[1]]
 
-  if ( !all(groupby_vars %in% names(df)) ) {
+  if (all(groupby_vars %in% names(df))) {
+    # Find all unique groups and frequency, saved in column `Freq`
+    unique_groups_counts <- as.data.frame(
+      table(df[, groupby_vars, with=FALSE], exclude=NULL, dnn=groupby_vars), 
+      stringsAsFactors=FALSE
+    )
+    unique_groups_counts <- unique_groups_counts[
+      complete.cases(unique_groups_counts[, groupby_vars]),
+    ]
+  } else {
     msg_plain(
       sprintf(
         "not all of groupby columns %s available in data; skipping aggregation",
@@ -263,17 +272,6 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
       ))
     return( list() )
   }
-  
-  ## Find all unique groups and associated frequencies, saved in column `Freq`.
-  # Keep rows with missing values initially so that we get the correct column
-  # names. Explicitly drop groups with missing values in second step.
-  unique_groups_counts <- as.data.frame(
-    table(df[, groupby_vars, with=FALSE], exclude=NULL, dnn=groupby_vars), 
-    stringsAsFactors=FALSE
-  )
-  unique_groups_counts <- unique_groups_counts[
-    complete.cases(unique_groups_counts[, groupby_vars]),
-  ]
   
   ## Convert col type in unique_groups to match that in data.
   # Filter on data.table in `calculate_group` requires that columns and filter
@@ -287,12 +285,11 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
   # If grouping by county, combine low-count counties into megacounties by state
   # prior to aggregation to reduce threads and associated memory needed later.
   if (geo_level == "county") {
-    # Separate groups with sufficient and insufficient sample size.
     small_groups <- filter(unique_groups_counts, Freq < params$num_filter)
     unique_groups_counts <- filter(unique_groups_counts, Freq >= params$num_filter)
 
-    # Create map of unique groups, with real FIPS of too-small counties, to
-    # megacounty FIPS
+    # Create map of unique groups, with real FIPS of too-small counties, to groups
+    # using megacounty FIPS
     small_groups_real_fips <- rename(small_groups, real_fips=geo_id) %>%
       mutate(geo_id=make_megacounty_fips(real_fips))
       
@@ -363,11 +360,6 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
       rowSums(is.na(dfs_out[[aggregation]][, c("val", "sample_size", groupby_vars)])) == 0,
     ]
 
-    if (geo_level == "county") {
-      df_megacounties <- megacounty(dfs_out[[aggregation]], params$num_filter, groupby_vars)
-      dfs_out[[aggregation]] <- bind_rows(dfs_out[[aggregation]], df_megacounties)
-    }
-    
     dfs_out[[aggregation]] <- apply_privacy_censoring(dfs_out[[aggregation]], params)
 
     ## *After* gluing together megacounties, apply the post-function
