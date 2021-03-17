@@ -233,7 +233,7 @@ remap_responses <- function(df) {
         "4"="Native Hawaiian or Pacific Islander",
         "5"="White",
         "6"="Other",
-        "multiracial"="Multiracial"),
+        "multiracial"="Other"),
       "default"=NULL,
       "type"="mc"
     ),
