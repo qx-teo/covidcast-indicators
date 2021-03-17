@@ -231,7 +231,6 @@ post_process_aggs <- function(df, aggregations, cw_list) {
 #'   "num_filter"
 #'
 #' @importFrom dplyr inner_join bind_rows filter group_by summarize across all_of
-#' @importFrom plyr match_df
 #' @importFrom parallel mclapply
 #' @importFrom stats complete.cases
 #'
@@ -270,16 +269,10 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
         "not all of groupby columns %s available in data; skipping aggregation",
         paste(groupby_vars, collapse=", ")
       ))
-    return( list() )
   }
-  
-  ## Convert col type in unique_groups to match that in data.
-  # Filter on data.table in `calculate_group` requires that columns and filter
-  # values are of the same type.
-  for (col_var in groupby_vars) {
-    if ( class(df[[col_var]]) != class(unique_groups_counts[[col_var]]) ) {
-      class(unique_groups_counts[[col_var]]) <- class(df[[col_var]])
-    }
+
+  if ( !exists("unique_groups_counts") || nrow(unique_groups_counts) == 0 ) {
+    return( list() )
   }
   
   # If grouping by county, combine low-count counties into megacounties by state
@@ -288,18 +281,12 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
     small_groups <- filter(unique_groups_counts, Freq < params$num_filter)
     unique_groups_counts <- filter(unique_groups_counts, Freq >= params$num_filter)
 
-    # Create map of unique groups, with real FIPS of too-small counties, to groups
-    # using megacounty FIPS
-    small_groups_real_fips <- rename(small_groups, real_fips=geo_id) %>%
-      mutate(geo_id=make_megacounty_fips(real_fips))
-      
     small_groups$geo_id <- make_megacounty_fips(small_groups$geo_id)
     # Combine small groups by new megacounty FIPS.
     small_groups <- group_by(small_groups, across(all_of(groupby_vars))) %>%
       summarize(Freq = sum(Freq))
-    small_groups$is_megacounty <- 1
 
-    unique_groups_counts <- bind_rows(unique_groups_counts, small_groups)
+    unique_groups_counts <- rbind(unique_groups_counts, small_groups)
   }
   
   # Drop groups with less than threshold samples.
@@ -308,30 +295,29 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
     return( list() )
   }
   
+  # Filter on data.table in `calculate_group` requires that columns and filter
+  # values are of the same type.
+  for (col_var in groupby_vars) {
+    if ( class(df[[col_var]]) != class(unique_groups_counts[[col_var]]) ) {
+      class(unique_groups_counts[[col_var]]) <- class(df[[col_var]])
+    }
+  }
+
   ## Set an index on the groupby var columns so that the groupby step can be
   ## faster; data.table stores the sort order of the column and
   ## uses a binary search to find matching values, rather than a linear scan.
   setindexv(df, groupby_vars)
 
   calculate_group <- function(ii) {
-    target_group <- target_group_filter <- unique_groups_counts[ii, groupby_vars, drop=FALSE]
-    
-    if ( !is.null(unique_groups_counts$is_megacounty) &&
-         !is.na(unique_groups_counts[ii, "is_megacounty"]) && 
-         unique_groups_counts[ii, "is_megacounty"] == 1 ) {
-      ## Get all groups with original FIPS codes contained in megacounty FIPS code.
-      target_group_filter <- match_df(small_groups_real_fips, target_group, on=groupby_vars)
-      target_group_filter <- select(target_group_filter, -geo_id, -Freq) %>%
-        rename(geo_id=real_fips)
-    }
+    target_group <- unique_groups_counts[ii, groupby_vars, drop=FALSE]
     # Use data.table's index to make this filter efficient
     out <- summarize_aggregations_group(
-      df[as.list(target_group_filter), on=groupby_vars],
+      df[as.list(target_group), on=names(target_group)],
       aggregations,
       target_group,
       geo_level,
       params)
-    
+
     return(out)
   }
 
