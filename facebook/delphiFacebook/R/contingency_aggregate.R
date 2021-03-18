@@ -24,7 +24,7 @@
 #' @return none
 #'
 #' @import data.table
-#' @importFrom dplyr full_join %>%
+#' @importFrom dplyr full_join %>% filter
 #' @importFrom purrr reduce
 #'
 #' @export
@@ -38,22 +38,38 @@ produce_aggregates <- function(df, aggregations, cw_list, params) {
   setkeyv(df, "start_dt")
 
   # Keep only obs in desired date range.
-  df <- df[start_dt >= params$start_time & start_dt <= params$end_time]
+  df <- filter(df, start_dt >= params$start_time, start_dt <= params$end_time]
+  msg_df("removed leading days", df)
 
   output <- post_process_aggs(df, aggregations, cw_list)
   df <- output[[1]]
   aggregations <- output[[2]]
+  
+  if ( nrow(aggregations) == 0 ) {
+    msg_plain(paste0("no aggregations to produce. If this is unexpected, ",
+                     "check that at least one aggregate is listed in ",
+                     "`contingency_run`::`set_aggs` in the relevant aggregate ",
+                     "range tibble (weekly or monthly). Check that the ",
+                     "metrics specified in the aggregates exist in the time ",
+                     "frame of interest"
+    ))
+  }
 
   agg_groups <- unique(aggregations[c("group_by", "geo_level")])
 
-  # For each unique combination of groupby_vars and geo level, run aggregation process once
-  # and calculate all desired aggregations on the grouping. Rename columns. Save
-  # to individual files
+  # For each unique combination of groupby_vars and geo level, run aggregation
+  # process once and calculate all desired aggregations on the grouping. Rename
+  # columns. Save to individual files
   for (group_ind in seq_along(agg_groups$group_by)) {
 
     agg_group <- agg_groups$group_by[group_ind][[1]]
     geo_level <- agg_groups$geo_level[group_ind]
     geo_crosswalk <- cw_list[[geo_level]]
+    
+    msg_plain(paste0("running contingency pipeline for ",
+                     geo_level, ", ",
+                     paste0(agg_group, collapse=", ")
+    ))
 
     # Subset aggregations to keep only those grouping by the current agg_group
     # and with the current geo_level. `setequal` ignores differences in
@@ -67,20 +83,28 @@ produce_aggregates <- function(df, aggregations, cw_list, params) {
     ## To display other response columns ("val", "sample_size", "se",
     ## "effective_sample_size", "represented"), add here.
     keep_vars <- c("val", "se", "sample_size", "represented")
-
-    for (agg_id in names(dfs_out)) {
-      agg_metric <- aggregations$name[aggregations$id == agg_id]
-      map_old_new_names <- keep_vars
-      names(map_old_new_names) <- paste(keep_vars, agg_metric, sep="_")
-
-      dfs_out[[agg_id]] <- rename(
-        dfs_out[[agg_id]][, c(agg_group, keep_vars)], all_of(map_old_new_names))
-    }
+    msg_plain(paste0(
+      "keeping only ", paste(keep_vars, collapse=", "), "in final aggregations"
+    ))
 
     if ( length(dfs_out) != 0 ) {
+      for (agg_id in names(dfs_out)) {
+        agg_metric <- aggregations$name[aggregations$id == agg_id]
+        map_old_new_names <- keep_vars
+        names(map_old_new_names) <- paste(keep_vars, agg_metric, sep="_")
+        
+        dfs_out[[agg_id]] <- rename(
+          dfs_out[[agg_id]][, c(agg_group, keep_vars)], all_of(map_old_new_names))
+      }
+      
       df_out <- dfs_out %>% reduce(full_join, by=agg_group, suff=c("", ""))
       write_contingency_tables(df_out, params, geo_level, agg_group)
-    }
+      
+    } else {
+      msg_plain(paste0("no aggregations produced for ",
+                       geo_level, ", ",
+                       paste0(agg_group, collapse=", ")
+      ))
   }
 }
 
@@ -118,6 +142,8 @@ produce_aggregates <- function(df, aggregations, cw_list, params) {
 #' @export
 post_process_aggs <- function(df, aggregations, cw_list) {
   aggregations$geo_level <- NA
+  
+  msg_plain("derive geo level from provided grouping variables")
   for (agg_ind in seq_along(aggregations$group_by)) {
     # Find geo_level, if any, present in provided group_by vars
     geo_level <- intersect(aggregations$group_by[agg_ind][[1]], names(cw_list))
@@ -166,6 +192,7 @@ post_process_aggs <- function(df, aggregations, cw_list) {
 
   metric_cols_to_convert <- unique(aggregations$metric)
 
+  msg_plain("converting metrics and grouping variables to aggregation-friendly formats")
   for (col_var in c(group_cols_to_convert, metric_cols_to_convert)) {
     if ( is.null(df[[col_var]]) ) {
       aggregations <- aggregations[aggregations$metric != col_var &
@@ -254,6 +281,7 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
   ## Find all unique groups and associated frequencies, saved in column `Freq`.
   # Keep rows with missing values initially so that we get the correct column
   # names. Explicitly drop groups with missing values in second step.
+  msg_plain("get frequencies of unique combinations of grouping variables")
   unique_groups_counts <- as.data.frame(
     table(df[, groupby_vars, with=FALSE], exclude=NULL, dnn=groupby_vars), 
     stringsAsFactors=FALSE
@@ -265,6 +293,7 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
   if (geo_level != "county") {
     # Drop groups with less than threshold sample size. Small county groups are
     # retained for later construction of megacounties.
+    msg_plain("for non-county aggregations, remove low-sample size groups")
     unique_groups_counts <- filter(unique_groups_counts, Freq >= params$num_filter)
   }
   if ( nrow(unique_groups_counts) == 0 ) {
@@ -274,6 +303,7 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
   ## Convert col type in unique_groups to match that in data.
   # Filter on data.table in `calculate_group` requires that columns and filter
   # values are of the same type.
+  msg_plain("convert unique groups types to match that of data")
   for (col_var in groupby_vars) {
     if ( class(df[[col_var]]) != class(unique_groups_counts[[col_var]]) ) {
       class(unique_groups_counts[[col_var]]) <- class(df[[col_var]])
@@ -304,6 +334,7 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
       batch_size <- 1000
       batches <- split(seq(nrow(unique_groups_counts)),
                        seq(nrow(unique_groups_counts)) %/% batch_size)
+      msg_plain(paste0("for county aggregations, parallelize in batches of ", batch_size, " groups"))
       for ( batch in batches ) {dfs <- mclapply(batch, calculate_group)}
     } else {
       dfs <- mclapply(seq_along(unique_groups_counts[[1]]), calculate_group)
@@ -314,6 +345,7 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
 
   ## Now we have a list, with one entry per groupby level, each containing a
   ## list of one data frame per aggregation. Rearrange it.
+  msg_plain("combine groups for the same aggregations")
   dfs_out <- list()
   for (aggregation in aggregations$id) {
     dfs_out[[aggregation]] <- bind_rows( lapply(dfs, function(groupby_levels) {
@@ -326,12 +358,21 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
     aggregation <- aggregations$id[row]
     groupby_vars <- aggregations$group_by[[row]]
     post_fn <- aggregations$post_fn[[row]]
+    
+    msg_plain(paste0(
+      "do post-processing for ", 
+      aggregations$name[row], 
+      " over ", 
+      paste(groupby_vars, collapse=", "
+      )
+    ))
 
     dfs_out[[aggregation]] <- dfs_out[[aggregation]][
       rowSums(is.na(dfs_out[[aggregation]][, c("val", "sample_size", groupby_vars)])) == 0,
     ]
 
     if (geo_level == "county") {
+      msg_plain("create megacounties")
       df_megacounties <- megacounty(dfs_out[[aggregation]], params$num_filter, groupby_vars)
       dfs_out[[aggregation]] <- bind_rows(dfs_out[[aggregation]], df_megacounties)
     }
@@ -339,6 +380,7 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
     dfs_out[[aggregation]] <- apply_privacy_censoring(dfs_out[[aggregation]], params)
 
     ## *After* gluing together megacounties, apply the post-function
+    msg_plain("apply post-function")
     dfs_out[[aggregation]] <- post_fn(dfs_out[[aggregation]])
   }
 
@@ -361,6 +403,13 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
 #'
 #' @export
 summarize_aggregations_group <- function(group_df, aggregations, target_group, geo_level, params) {
+  msg_plain(paste0(
+    "Calculating aggregations for group ", 
+    paste(names(target_group), collapse=", "), 
+    ": ", 
+    paste(target_group, collapse=", ")
+  ))
+  
   ## Prepare outputs.
   dfs_out <- list()
   for (row in seq_along(aggregations$id)) {
@@ -385,6 +434,7 @@ summarize_aggregations_group <- function(group_df, aggregations, target_group, g
     agg_df <- group_df[!is.na(group_df[[var_weight]]) & !is.na(group_df[[metric]]), ]
 
     if (nrow(agg_df) > 0) {
+      msg_plain(paste0("Calculating aggregation ", metric))
       s_mix_coef <- params$s_mix_coef
       mixing <- mix_weights(agg_df[[var_weight]] * agg_df$weight_in_location,
                             s_mix_coef, params$s_weight)
@@ -404,6 +454,8 @@ summarize_aggregations_group <- function(group_df, aggregations, target_group, g
       dfs_out[[aggregation]]$sample_size <- sample_size
       dfs_out[[aggregation]]$effective_sample_size <- new_row$effective_sample_size
       dfs_out[[aggregation]]$represented <- new_row$represented
+    } else {
+      msg_plain("agg_df has no rows")
     }
   }
 
