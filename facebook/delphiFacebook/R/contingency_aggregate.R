@@ -38,7 +38,7 @@ produce_aggregates <- function(df, aggregations, cw_list, params) {
   setkeyv(df, "start_dt")
 
   # Keep only obs in desired date range.
-  df <- filter(df, start_dt >= params$start_time, start_dt <= params$end_time]
+  df <- filter(df, start_dt >= params$start_time, start_dt <= params$end_time)
   msg_df("removed leading days", df)
 
   output <- post_process_aggs(df, aggregations, cw_list)
