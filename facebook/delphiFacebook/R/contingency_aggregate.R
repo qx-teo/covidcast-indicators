@@ -105,6 +105,7 @@ produce_aggregates <- function(df, aggregations, cw_list, params) {
                        geo_level, ", ",
                        paste0(agg_group, collapse=", ")
       ))
+    }
   }
 }
 
@@ -424,31 +425,31 @@ summarize_aggregations_group <- function(group_df, aggregations, target_group, g
                  effective_sample_size=NA_real_,
                  represented=NA_real_)
   }
-
+  
   for (row in seq_along(aggregations$id)) {
     aggregation <- aggregations$id[row]
     metric <- aggregations$metric[row]
     var_weight <- aggregations$var_weight[row]
     compute_fn <- aggregations$compute_fn[[row]]
-
+    
     agg_df <- group_df[!is.na(group_df[[var_weight]]) & !is.na(group_df[[metric]]), ]
-
+    
     if (nrow(agg_df) > 0) {
       msg_plain(paste0("Calculating aggregation ", metric))
       s_mix_coef <- params$s_mix_coef
       mixing <- mix_weights(agg_df[[var_weight]] * agg_df$weight_in_location,
                             s_mix_coef, params$s_weight)
-
+      
       sample_size <- sum(agg_df$weight_in_location)
       total_represented <- sum(agg_df[[var_weight]] * agg_df$weight_in_location)
-
+      
       ## TODO: See issue #764
       new_row <- compute_fn(
         response = agg_df[[metric]],
         weight = if (aggregations$skip_mixing[row]) { mixing$normalized_preweights } else { mixing$weights },
         sample_size = sample_size,
         total_represented = total_represented)
-
+      
       dfs_out[[aggregation]]$val <- new_row$val
       dfs_out[[aggregation]]$se <- new_row$se
       dfs_out[[aggregation]]$sample_size <- sample_size
@@ -458,6 +459,6 @@ summarize_aggregations_group <- function(group_df, aggregations, target_group, g
       msg_plain("agg_df has no rows")
     }
   }
-
+  
   return(dfs_out)
 }
