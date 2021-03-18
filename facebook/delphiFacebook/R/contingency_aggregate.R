@@ -45,16 +45,6 @@ produce_aggregates <- function(df, aggregations, cw_list, params) {
   df <- output[[1]]
   aggregations <- output[[2]]
   
-  if ( nrow(aggregations) == 0 ) {
-    msg_plain(paste0("no aggregations to produce. If this is unexpected, ",
-                     "check that at least one aggregate is listed in ",
-                     "`contingency_run`::`set_aggs` in the relevant aggregate ",
-                     "range tibble (weekly or monthly). Check that the ",
-                     "metrics specified in the aggregates exist in the time ",
-                     "frame of interest"
-    ))
-  }
-
   agg_groups <- unique(aggregations[c("group_by", "geo_level")])
 
   # For each unique combination of groupby_vars and geo level, run aggregation
@@ -195,13 +185,13 @@ post_process_aggs <- function(df, aggregations, cw_list) {
 
   msg_plain("converting metrics and grouping variables to aggregation-friendly formats")
   for (col_var in c(group_cols_to_convert, metric_cols_to_convert)) {
-    if ( is.null(df[[col_var]]) ) {
+    if ( is.null(df[[col_var]]) | is.na( unique(df[[col_var]]) ) ) {
       aggregations <- aggregations[aggregations$metric != col_var &
                                      !mapply(aggregations$group_by,
                                              FUN=function(x) {col_var %in% x}), ]
       msg_plain(
         paste0(
-          col_var, " is not defined. Removing all aggregations that use it. ", 
+          col_var, " is completely missing or not defined. Removing all aggregations that use it. ", 
           nrow(aggregations), " remaining")
       )
       next

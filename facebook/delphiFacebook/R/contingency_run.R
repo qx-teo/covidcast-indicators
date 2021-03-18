@@ -308,6 +308,14 @@ run_contingency_tables_one_period <- function(params, aggregations)
     data_agg <- make_human_readable(data_agg)
 
     produce_aggregates(data_agg, aggregations, cw_list, params)
+  } else {
+    msg_plain(paste0("no aggregations to produce. If this is unexpected, ",
+                     "check that at least one aggregate is listed in ",
+                     "`contingency_run`::`set_aggs` in the relevant aggregate ",
+                     "range tibble (weekly or monthly). Check that the ",
+                     "metrics specified in the aggregates were collected in ",
+                     "the time frame of interest"
+    ))
   }
 
 }
