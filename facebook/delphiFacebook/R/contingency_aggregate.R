@@ -185,7 +185,7 @@ post_process_aggs <- function(df, aggregations, cw_list) {
 
   msg_plain("converting metrics and grouping variables to aggregation-friendly formats")
   for (col_var in c(group_cols_to_convert, metric_cols_to_convert)) {
-    if ( is.null(df[[col_var]]) | is.na( unique(df[[col_var]]) ) ) {
+    if ( is.null(df[[col_var]]) | all(is.na( unique(df[[col_var]]) )) ) {
       aggregations <- aggregations[aggregations$metric != col_var &
                                      !mapply(aggregations$group_by,
                                              FUN=function(x) {col_var %in% x}), ]
@@ -336,7 +336,7 @@ summarize_aggs <- function(df, crosswalk_data, aggregations, geo_level, params) 
 
   ## Now we have a list, with one entry per groupby level, each containing a
   ## list of one data frame per aggregation. Rearrange it.
-  msg_plain("combine groups for the same aggregations")
+  msg_plain("combine groups by aggregation")
   dfs_out <- list()
   for (aggregation in aggregations$id) {
     dfs_out[[aggregation]] <- bind_rows( lapply(dfs, function(groupby_levels) {
