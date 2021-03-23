@@ -26,12 +26,6 @@ make_human_readable <- function(input_data) {
     input_data$D2 %in% c(1, 2, 3, 4, 5) & input_data$D6 == 2 & input_data$D7 == 5 ~ "Non-Hispanic White",
   )
   
-  input_data$mc_race_ethnicity_subset <- case_when(
-    input_data$D2 %in% c(1, 2, 3, 4, 5) & input_data$D6 == 1 ~ "Hispanic",
-    input_data$D2 %in% c(1, 2, 3, 4, 5) & input_data$D6 == 2 & input_data$D7 == 3 ~ "Non-Hispanic Black",
-    input_data$D2 %in% c(1, 2, 3, 4, 5) & input_data$D6 == 2 & input_data$D7 == 5 ~ "Non-Hispanic White",
-  )
-  
   input_data$mc_ifwhere_working <- case_when(
     input_data$D9 == 2 ~ "Not working",
     input_data$D9 == 1 & input_data$D10 == 2 ~ "Working but not outside the home",
