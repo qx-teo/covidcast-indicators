@@ -148,14 +148,23 @@ set_aggs <- function() {
 
   monthly_aggs <- tribble(
     ~name, ~metric, ~group_by, ~compute_fn, ~post_fn,
-    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race", "nation"), compute_binary, jeffreys_binary,
-    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_hispanic", "nation"), compute_binary, jeffreys_binary,
+    ## National
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race", "mc_education", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_hispanic", "mc_education", "nation"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race_ethnicity", "mc_education", "nation"), compute_binary, jeffreys_binary,
     
     "freq_education", "mc_education", c("mc_race", "nation"), compute_multiple_choice, I,
     "freq_education", "mc_education", c("b_hispanic", "nation"), compute_multiple_choice, I,
-    
-    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
     "freq_education", "mc_education", c("mc_race_ethnicity", "nation"), compute_multiple_choice, I,
+    
+    ## State
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race", "mc_education", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("b_hispanic", "mc_education", "state"), compute_binary, jeffreys_binary,
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race_ethnicity", "mc_education", "state"), compute_binary, jeffreys_binary,
+    
+    "freq_education", "mc_education", c("mc_race", "state"), compute_multiple_choice, I,
+    "freq_education", "mc_education", c("b_hispanic", "state"), compute_multiple_choice, I,
+    "freq_education", "mc_education", c("mc_race_ethnicity", "state"), compute_multiple_choice, I,
   )
 
   return(list("week"=weekly_aggs, "month"=monthly_aggs))
