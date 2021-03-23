@@ -233,7 +233,7 @@ remap_responses <- function(df) {
         "4"="Native Hawaiian or Pacific Islander",
         "5"="White",
         "6"="Other",
-        "multiracial"="Multiracial"),
+        "multiracial"="Other"),
       "default"=NULL,
       "type"="mc"
     ),
@@ -258,14 +258,14 @@ remap_responses <- function(df) {
     ),
     D8=list(
       "map"=c(
-        "1"="Less than high school",
-        "2"="High school graduate or equivalent",
+        "1"="High school or less",
+        "2"="High school or less",
         "3"="Some college",
-        "4"="2 year degree",
-        "5"="4 year degree",
-        "6"="Master's degree",
-        "7"="Professional degree",
-        "8"="Doctorate"),
+        "4"="College or more",
+        "5"="College or more",
+        "6"="College or more",
+        "7"="College or more",
+        "8"="College or more"),
       "default"=NULL,
       "type"="mc"
     ),
