@@ -153,6 +153,9 @@ set_aggs <- function() {
     
     "freq_education", "mc_education", c("mc_race", "nation"), compute_multiple_choice, I,
     "freq_education", "mc_education", c("b_hispanic", "nation"), compute_multiple_choice, I,
+    
+    "pct_hesitant", "b_hesitant_cov_vaccine", c("mc_race_ethnicity", "nation"), compute_binary, jeffreys_binary,
+    "freq_education", "mc_education", c("mc_race_ethnicity", "nation"), compute_multiple_choice, I,
   )
 
   return(list("week"=weekly_aggs, "month"=monthly_aggs))
