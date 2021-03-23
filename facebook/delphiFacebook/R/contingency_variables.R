@@ -19,6 +19,30 @@
 #'
 #' @export
 make_human_readable <- function(input_data) {
+  input_data$mc_race_ethnicity_age_18to64 <- case_when(
+    input_data$D2 %in% c(1, 2, 3, 4, 5) & input_data$D6 == 1 ~ "Hispanic",
+    input_data$D2 %in% c(1, 2, 3, 4, 5) & input_data$D6 == 2 & input_data$D7 == 2 ~ "Non-Hispanic Asian",
+    input_data$D2 %in% c(1, 2, 3, 4, 5) & input_data$D6 == 2 & input_data$D7 == 3 ~ "Non-Hispanic Black",
+    input_data$D2 %in% c(1, 2, 3, 4, 5) & input_data$D6 == 2 & input_data$D7 == 5 ~ "Non-Hispanic White",
+  )
+  
+  input_data$mc_race_ethnicity_subset <- case_when(
+    input_data$D2 %in% c(1, 2, 3, 4, 5) & input_data$D6 == 1 ~ "Hispanic",
+    input_data$D2 %in% c(1, 2, 3, 4, 5) & input_data$D6 == 2 & input_data$D7 == 3 ~ "Non-Hispanic Black",
+    input_data$D2 %in% c(1, 2, 3, 4, 5) & input_data$D6 == 2 & input_data$D7 == 5 ~ "Non-Hispanic White",
+  )
+  
+  input_data$mc_ifwhere_working <- case_when(
+    input_data$D9 == 2 ~ "Not working",
+    input_data$D9 == 1 & input_data$D10 == 2 ~ "Working but not outside the home",
+    input_data$D9 == 1 & input_data$D10 == 1 ~ "Working outside the home",
+  )
+  
+  input_data$b_tested_pos_2w <- case_when(
+    input_data$B10==1 & input_data$B10a==1 ~ 1,
+    input_data$B8==2 |input_data$B10==3 | ( input_data$B10==1 & input_data$B10a %in% c(2, 3) ) ~ 0
+  )
+  
   input_data <- remap_responses(input_data)
   input_data <- rename_responses(input_data)
   input_data$t_zipcode <- input_data$zip5 # Keep existing parsed zipcode column
