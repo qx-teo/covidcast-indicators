@@ -37,10 +37,12 @@ load_responses_all <- function(params) {
 #'                        where the input file are found
 #'
 #' @importFrom stringi stri_split stri_extract stri_replace_all stri_replace
-#' @importFrom readr read_lines cols locale col_character col_integer
+#' @importFrom readr read_lines
 #' @importFrom dplyr arrange desc case_when mutate if_else
 #' @importFrom lubridate force_tz with_tz
 #' @importFrom rlang .data
+#' @importFrom data.table fread
+#' 
 #' @export
 load_response_one <- function(input_filename, params) {
   msg_plain(paste0("Reading ", input_filename))
@@ -54,81 +56,90 @@ load_response_one <- function(input_filename, params) {
 
   col_names <- stri_split(read_lines(full_path, n_max = 1L), fixed = ",")[[1]]
   col_names <- stri_replace_all(col_names, "", fixed = "\"")
+  
+  name_index <- function(name) {
+    return( which(col_names == name) )
+  }
 
   ## The CSVs have some columns with column-separated fields showing which of
-  ## multiple options a user selected; readr would interpret these as thousand
-  ## separators by default, so we tell it that no thousands separators are used.
-  ## Sometimes readr gets confused and records the "Other" columns (*_TEXT) as
-  ## logicals or multiple-choice columns as numeric, so we tell it that those
-  ## are always character data.
-  input_data <- read_csv(full_path, skip = 3L, col_names = col_names,
-                         col_types = cols(
-                           A2 = col_character(),
-                           A3 = col_character(),
-                           B2 = col_character(),
-                           B2_14_TEXT = col_character(),
-                           B2c = col_character(),
-                           B2c_14_TEXT = col_character(),
-                           B7 = col_character(),
-                           B10b = col_character(),
-                           B12a = col_character(),
-                           C1 = col_character(),
-                           C13 = col_character(),
-                           C13a = col_character(),
-                           C13b = col_character(),
-                           C13c = col_character(),
-                           D1_4_TEXT = col_character(),
-                           D1b = col_integer(),
-                           D7 = col_character(),
-                           D11 = col_integer(),
-                           E3 = col_character(),
-                           Q_TerminateFlag = col_character(),
-                           V1 = col_integer(),
-                           V2 = col_integer(),
-                           V2a = col_integer(),
-                           V3 = col_integer(),
-                           V4_1 = col_integer(),
-                           V4_2 = col_integer(),
-                           V4_3 = col_integer(),
-                           V4_4 = col_integer(),
-                           V4_5 = col_integer(),
-                           V4a_1 = col_integer(),
-                           V4a_2 = col_integer(),
-                           V4a_3 = col_integer(),
-                           V4a_4 = col_integer(),
-                           V4a_5 = col_integer(),
-                           V5a = col_character(),
-                           V5b = col_character(),
-                           V5c = col_character(),
-                           V5d = col_character(),
-                           V6 = col_character(),
-                           V9 = col_integer(),
-                           V11 = col_integer(),
-                           V12 = col_integer(),
-                           V13 = col_integer(),
-                           V14_1 = col_character(),
-                           V14_2 = col_character(),
-                           Q65 = col_integer(),
-                           Q66 = col_integer(),
-                           Q67 = col_integer(),
-                           Q68 = col_integer(),
-                           Q69 = col_integer(),
-                           Q70 = col_integer(),
-                           Q71 = col_integer(),
-                           Q72 = col_integer(),
-                           Q73 = col_integer(),
-                           Q74 = col_integer(),
-                           Q75 = col_integer(),
-                           Q76 = col_integer(),
-                           Q77 = col_integer(),
-                           Q78 = col_integer(),
-                           Q79 = col_integer(),
-                           Q80 = col_integer(),
-                           V1 = col_integer()),
-                         locale = locale(grouping_mark = ""))
+  ## multiple options a user selected; fread would interpret these as thousand
+  ## separators by default, so we tell it that these columns should be read as
+  ## characters. Sometimes fread gets confused and records the "Other" columns
+  ## (*_TEXT) as logicals or multiple-choice columns as numeric, so we tell it
+  ## that those are always character data.
+  input_data <- fread(full_path, skip = 3L, col.names = col_names,
+                      na.strings = c("\"NA\"", "NA", ""),
+                      colClasses = list(
+                        character = name_index("A2"),
+                        character = name_index("A3"),
+                        character = name_index("B2"),
+                        character = name_index("B2_14_TEXT"),
+                        character = name_index("B2c"),
+                        character = name_index("B2c_14_TEXT"),
+                        character = name_index("B7"),
+                        character = name_index("B10b"),
+                        character = name_index("B12a"),
+                        character = name_index("C1"),
+                        character = name_index("C13"),
+                        character = name_index("C13a"),
+                        character = name_index("C13b"),
+                        character = name_index("C13c"),
+                        character = name_index("D1_4_TEXT"),
+                        integer = name_index("D1b"),
+                        integer = name_index("D3"),
+                        character = name_index("D7"),
+                        integer = name_index("D11"),
+                        character = name_index("E3"),
+                        character = name_index("Q_TerminateFlag"),
+                        integer = name_index("V1"),
+                        integer = name_index("V2"),
+                        integer = name_index("V2a"),
+                        integer = name_index("V3"),
+                        integer = name_index("V4_1"),
+                        integer = name_index("V4_2"),
+                        integer = name_index("V4_3"),
+                        integer = name_index("V4_4"),
+                        integer = name_index("V4_5"),
+                        integer = name_index("V4a_1"),
+                        integer = name_index("V4a_2"),
+                        integer = name_index("V4a_3"),
+                        integer = name_index("V4a_4"),
+                        integer = name_index("V4a_5"),
+                        character = name_index("V5a"),
+                        character = name_index("V5b"),
+                        character = name_index("V5c"),
+                        character = name_index("V5d"),
+                        character = name_index("V6"),
+                        integer = name_index("V9"),
+                        integer = name_index("V11"),
+                        integer = name_index("V12"),
+                        integer = name_index("V13"),
+                        character = name_index("V14_1"),
+                        character = name_index("V14_2"),
+                        integer = name_index("Q65"),
+                        integer = name_index("Q66"),
+                        integer = name_index("Q67"),
+                        integer = name_index("Q68"),
+                        integer = name_index("Q69"),
+                        integer = name_index("Q70"),
+                        integer = name_index("Q71"),
+                        integer = name_index("Q72"),
+                        integer = name_index("Q73"),
+                        integer = name_index("Q74"),
+                        integer = name_index("Q75"),
+                        integer = name_index("Q76"),
+                        integer = name_index("Q77"),
+                        integer = name_index("Q78"),
+                        integer = name_index("Q79"),
+                        integer = name_index("Q80")
+                      ),
+                      data.table = FALSE,
+                      showProgress = FALSE
+  )
   if (nrow(input_data) == 0) {
     return(tibble())
   }
+  
   input_data <- arrange(input_data, desc(.data$StartDate))
   if (!("SurveyID" %in% names(input_data))) {
     # The first wave files didn't actually record their survey id
