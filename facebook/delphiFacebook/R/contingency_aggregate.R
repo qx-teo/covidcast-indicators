@@ -131,8 +131,8 @@ post_process_aggs <- function(df, aggregations, cw_list) {
     # Find geo_level, if any, present in provided group_by vars
     geo_level <- intersect(aggregations$group_by[agg_ind][[1]], names(cw_list))
 
-    # Add implied geo_level to each group_by. Order alphabetically. Replace
-    # geo_level with generic "geo_id" var. Remove duplicate grouping vars.
+    # Add implied geo_level to each group_by. Replace geo_level with generic
+    # "geo_id" var. Remove duplicate grouping vars.
     if (length(geo_level) > 1) {
       stop('more than one geo type provided for a single aggregation')
 
@@ -140,25 +140,26 @@ post_process_aggs <- function(df, aggregations, cw_list) {
       # Presume national grouping
       geo_level <- "nation"
       aggregations$group_by[agg_ind][[1]] <-
-        sort(append(aggregations$group_by[agg_ind][[1]], "geo_id"))
+        append(aggregations$group_by[agg_ind][[1]], "geo_id")
 
     } else {
       aggregations$group_by[agg_ind][[1]][
         aggregations$group_by[agg_ind][[1]] == geo_level] <- "geo_id"
       aggregations$group_by[agg_ind][[1]] <-
-        sort(unique(aggregations$group_by[agg_ind][[1]]))
+        unique(aggregations$group_by[agg_ind][[1]])
     }
 
     aggregations$geo_level[agg_ind] <- geo_level
 
     # Multiple choice metrics should also be included in the group_by vars
     if (startsWith(aggregations$metric[agg_ind], "mc_")) {
-      if ( !(aggregations$metric[agg_ind] %in%
-             aggregations$group_by[agg_ind][[1]]) ) {
         aggregations$group_by[agg_ind][[1]] <-
-          c(aggregations$group_by[agg_ind][[1]], aggregations$metric[agg_ind])
-      }
+          unique(aggregations$group_by[agg_ind][[1]], aggregations$metric[agg_ind])
     }
+    
+    # Order alphabetically.
+    aggregations$group_by[agg_ind][[1]] <-
+      sort(aggregations$group_by[agg_ind][[1]])
   }
 
   # Convert columns used in aggregations to appropriate format
