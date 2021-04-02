@@ -346,7 +346,7 @@ create_derivative_columns <- function(df) {
       TRUE ~ NA_character_
     )
     
-    df$b_65_or_older <- (	
+    df$b_65_or_older <- (
       df$mc_age == "65-74" | df$mc_age == "75+"	
     )
   }
