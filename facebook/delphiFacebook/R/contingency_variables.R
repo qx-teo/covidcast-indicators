@@ -341,17 +341,16 @@ create_derivative_columns <- function(df) {
       df$mc_age == "35-44" ~ "25-44", 
       df$mc_age == "45-54" ~ "45-64",
       df$mc_age == "55-64" ~ "45-64",
-      df$mc_age == "65-74" ~ "65-74",, 
-      df$mc_age == "75+" ~ "75+",
+      df$mc_age == "65-74" ~ "65+",, 
+      df$mc_age == "75+" ~ "65+",
       TRUE ~ NA_character_
+    )
+    
+    df$b_65plus <- (	
+      df$mc_age == "65-74" | df$mc_age == "75+"	
     )
   }
   
-  df$b_65plus <- (	
-    df$mc_age == "65-74" | df$mc_age == "75+"	
-  )
-  
-  # Make derivative columns.	
   if ("D11" %in% names(df)) {
     df$b_smoke <- case_when(
       df$D11 == 1 ~ 1,
