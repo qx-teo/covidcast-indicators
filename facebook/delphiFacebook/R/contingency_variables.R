@@ -334,14 +334,13 @@ remap_responses <- function(df) {
 #' @importFrom dplyr case_when coalesce
 create_derivative_columns <- function(df) {
   if ("mc_age" %in% names(df)) {
-    
     df$mc_agecondensed <- case_when(
       df$mc_age == "18-24" ~ "18-24", 
       df$mc_age == "25-34" ~ "25-44", 
       df$mc_age == "35-44" ~ "25-44", 
       df$mc_age == "45-54" ~ "45-64",
       df$mc_age == "55-64" ~ "45-64",
-      df$mc_age == "65-74" ~ "65+",, 
+      df$mc_age == "65-74" ~ "65+",
       df$mc_age == "75+" ~ "65+",
       TRUE ~ NA_character_
     )
