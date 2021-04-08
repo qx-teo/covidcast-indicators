@@ -333,313 +333,68 @@ remap_responses <- function(df) {
 #' 
 #' @importFrom dplyr case_when coalesce
 create_derivative_columns <- function(df) {
+  # have an appointment to receive a COVID-19 vaccine
+  # V11
+  if ("V11" %in% names(df)) {
+    df$b_appointment_have <- as.numeric(df$V11 == 1)
+  } else {
+    df$b_appointment_have <- NA_real_
+  }
+  
+  # tried to get an appointment to receive a COVID-19 vaccine
+  # V12
+  if ("V12" %in% names(df)) {
+    df$b_appointment_tried <- as.numeric(df$V12 == 1)
+  } else {
+    df$b_appointment_tried <- NA_real_
+  }
+  
+  
+  # feel very or moderately informed about vaccines
+  # V13
+  if ("V13" %in% names(df)) {
+    df$b_vaccination_informed <- case_when(
+      df$V13 == 1 ~ 1,
+      df$V13 == 2 ~ 1,
+      df$V13 == 3 ~ 0,
+      df$V13 == 4 ~ 0,
+      TRUE ~ NA_real_
+    )
+  } else {
+    df$b_vaccination_informed <- NA_real_
+  }
+  
   if ("mc_age" %in% names(df)) {
-    df$mc_agecondensed <- case_when(
-      df$mc_age == "18-24" ~ "18-24", 
-      df$mc_age == "25-34" ~ "25-44", 
-      df$mc_age == "35-44" ~ "25-44", 
-      df$mc_age == "45-54" ~ "45-64",
-      df$mc_age == "55-64" ~ "45-64",
-      df$mc_age == "65-74" ~ "65+",
-      df$mc_age == "75+" ~ "65+",
+    df$mc_age3 <- case_when(
+      df$mc_age == "18-24" ~ "18-34", 
+      df$mc_age == "25-34" ~ "18-34", 
+      df$mc_age == "35-44" ~ "35-54", 
+      df$mc_age == "45-54" ~ "35-54",
+      df$mc_age == "55-64" ~ "55+",
+      df$mc_age == "65-74" ~ "55+",
+      df$mc_age == "75+" ~ "55+",
       TRUE ~ NA_character_
     )
-    
-    df$b_65_or_older <- (
-      df$mc_age == "65-74" | df$mc_age == "75+"	
-    )
-  }
-  
-  if ("D11" %in% names(df)) {
-    df$b_smoke <- case_when(
-      df$D11 == 1 ~ 1,
-      df$D11 == 2 ~ 0,
-      TRUE ~ NA_real_
-    )
-  }
-  
-  if ("mc_pregnant" %in% names(df)) {
-    df$b_pregnant <- case_when(
-      df$mc_pregnant == 1 ~ 1,
-      df$mc_pregnant == 2 ~ 0,
-      df$mc_pregnant == 4 ~ 0,
-      df$mc_gender == "Male" ~ 0,
-      TRUE ~ NA_real_
-    )
-  }
-
-  df$b_any_comorbidity <- as.numeric(
-    df$b_heart_disease == 1 | 
-      df$b_cancer == 1 | df$b_chronic_kidney_disease == 1 | 
-      df$b_chronic_lung_disease == 1 | df$b_diabetes == 1 | 
-      df$b_immunocompromised == 1  
-  )
-  
-  if ( "D11" %in% names(df) && "mc_pregnant" %in% names(df) ) {
-    df$b_any_comorbidity2 <- as.numeric(
-      df$b_heart_disease == 1 | 
-        df$b_cancer == 1 | df$b_chronic_kidney_disease == 1 | 
-        df$b_chronic_lung_disease == 1 | df$b_diabetes == 1 | 
-        df$b_immunocompromised == 1  | df$b_pregnant == 1 |
-        df$b_smoke == 1 | df$b_obese == 1
-    )
   } else {
-    df$b_any_comorbidity_preg_smoke_obese <- NA_real_
-  }
-  
-  if ("mc_occupational_group" %in% names(df)) {	
-    df$b_work_in_healthcare <- as.numeric(	
-      df$mc_occupational_group == "Healthcare support" | df$mc_occupational_group == "Healthcare practitioner"	
-    )	
-  } else {	
-    df$b_work_in_healthcare <- NA_real_	
-  }	
-
-  if ("mc_accept_cov_vaccine" %in% names(df)) {	
-    df$b_hesitant_cov_vaccine <- as.numeric(	
-      df$mc_accept_cov_vaccine == "prob not vaccinate" | df$mc_accept_cov_vaccine == "def not vaccinate"	
-    )	
- 
-    df$b_accepting_yes_definitely <- df$mc_accept_cov_vaccine == "def vaccinate"
-    df$b_accepting_yes_probably <- df$mc_accept_cov_vaccine == "prob vaccinate"
-    df$b_accepting_no_probably <- df$mc_accept_cov_vaccine == "prob not vaccinate"
-    df$b_accepting_no_definitely <- df$mc_accept_cov_vaccine == "def not vaccinate"
-    
-  } else {	
-    df$b_hesitant_cov_vaccine <- NA_real_
-    
-    df$b_accepting_yes_definitely <- NA
-    df$b_accepting_yes_probably <- NA
-    df$b_accepting_no_probably <- NA
-    df$b_accepting_no_definitely <- NA
-  }	
-  
-  if ("V5a" %in% names(df) && "V5b" %in% names(df) && "V5c" %in% names(df)) {
-    # introduced in Wave 8
-    hesitancy_reasons_b <- split_options(df$V5b)
-    hesitancy_reasons_c <- split_options(df$V5c)
-    
-    df$v_hesitancy_reason_sideeffects_b <- is_selected(hesitancy_reasons_b, "1")
-    df$v_hesitancy_reason_allergic_b <- is_selected(hesitancy_reasons_b, "2")
-    df$v_hesitancy_reason_ineffective_b <- is_selected(hesitancy_reasons_b, "3")
-    df$v_hesitancy_reason_unnecessary_b <- is_selected(hesitancy_reasons_b, "4")
-    df$v_hesitancy_reason_dislike_vaccines_b <- is_selected(hesitancy_reasons_b, "5")
-    df$v_hesitancy_reason_not_recommended_b <- is_selected(hesitancy_reasons_b, "6")
-    df$v_hesitancy_reason_wait_safety_b <- is_selected(hesitancy_reasons_b, "7")
-    df$v_hesitancy_reason_low_priority_b <- is_selected(hesitancy_reasons_b, "8")
-    df$v_hesitancy_reason_cost_b <- is_selected(hesitancy_reasons_b, "9")
-    df$v_hesitancy_reason_distrust_vaccines_b <- is_selected(hesitancy_reasons_b, "10")
-    df$v_hesitancy_reason_distrust_gov_b <- is_selected(hesitancy_reasons_b, "11")
-    df$v_hesitancy_reason_health_condition_b <- is_selected(hesitancy_reasons_b, "12")
-    df$v_hesitancy_reason_other_b <- is_selected(hesitancy_reasons_b, "13")
-    df$v_hesitancy_reason_pregnant_b <- is_selected(hesitancy_reasons_b, "14")
-    df$v_hesitancy_reason_religious_b <- is_selected(hesitancy_reasons_b, "15")
-    
-    df$v_hesitancy_reason_sideeffects_c <- is_selected(hesitancy_reasons_c, "1")
-    df$v_hesitancy_reason_allergic_c <- is_selected(hesitancy_reasons_c, "2")
-    df$v_hesitancy_reason_ineffective_c <- is_selected(hesitancy_reasons_c, "3")
-    df$v_hesitancy_reason_unnecessary_c <- is_selected(hesitancy_reasons_c, "4")
-    df$v_hesitancy_reason_dislike_vaccines_c <- is_selected(hesitancy_reasons_c, "5")
-    df$v_hesitancy_reason_not_recommended_c <- is_selected(hesitancy_reasons_c, "6")
-    df$v_hesitancy_reason_wait_safety_c <- is_selected(hesitancy_reasons_c, "7")
-    df$v_hesitancy_reason_low_priority_c <- is_selected(hesitancy_reasons_c, "8")
-    df$v_hesitancy_reason_cost_c <- is_selected(hesitancy_reasons_c, "9")
-    df$v_hesitancy_reason_distrust_vaccines_c <- is_selected(hesitancy_reasons_c, "10")
-    df$v_hesitancy_reason_distrust_gov_c <- is_selected(hesitancy_reasons_c, "11")
-    df$v_hesitancy_reason_health_condition_c <- is_selected(hesitancy_reasons_c, "12")
-    df$v_hesitancy_reason_other_c <- is_selected(hesitancy_reasons_c, "13")
-    df$v_hesitancy_reason_pregnant_c <- is_selected(hesitancy_reasons_c, "14")
-    df$v_hesitancy_reason_religious_c <- is_selected(hesitancy_reasons_c, "15")
-    
-  } else {
-    df$v_hesitancy_reason_sideeffects_b <- NA_real_
-    df$v_hesitancy_reason_allergic_b <- NA_real_
-    df$v_hesitancy_reason_ineffective_b <- NA_real_
-    df$v_hesitancy_reason_unnecessary_b <- NA_real_
-    df$v_hesitancy_reason_dislike_vaccines_b <- NA_real_
-    df$v_hesitancy_reason_not_recommended_b <- NA_real_
-    df$v_hesitancy_reason_wait_safety_b <- NA_real_
-    df$v_hesitancy_reason_low_priority_b <- NA_real_
-    df$v_hesitancy_reason_cost_b <- NA_real_
-    df$v_hesitancy_reason_distrust_vaccines_b <- NA_real_
-    df$v_hesitancy_reason_distrust_gov_b <- NA_real_
-    df$v_hesitancy_reason_health_condition_b <- NA_real_
-    df$v_hesitancy_reason_other_b <- NA_real_
-    df$v_hesitancy_reason_pregnant_b <- NA_real_
-    df$v_hesitancy_reason_religious_b <- NA_real_
-    
-    df$v_hesitancy_reason_sideeffects_c <- NA_real_
-    df$v_hesitancy_reason_allergic_c <- NA_real_
-    df$v_hesitancy_reason_ineffective_c <- NA_real_
-    df$v_hesitancy_reason_unnecessary_c <- NA_real_
-    df$v_hesitancy_reason_dislike_vaccines_c <- NA_real_
-    df$v_hesitancy_reason_not_recommended_c <- NA_real_
-    df$v_hesitancy_reason_wait_safety_c <- NA_real_
-    df$v_hesitancy_reason_low_priority_c <- NA_real_
-    df$v_hesitancy_reason_cost_c <- NA_real_
-    df$v_hesitancy_reason_distrust_vaccines_c <- NA_real_
-    df$v_hesitancy_reason_distrust_gov_c <- NA_real_
-    df$v_hesitancy_reason_health_condition_c <- NA_real_
-    df$v_hesitancy_reason_other_c <- NA_real_
-    df$v_hesitancy_reason_pregnant_c <- NA_real_
-    df$v_hesitancy_reason_religious_c <- NA_real_
-    
-  }
-  
-  df$v_hesitancy_reason_sideeffects_5bc <- coalesce(df$v_hesitancy_reason_sideeffects_b, df$v_hesitancy_reason_sideeffects_c)
-  df$v_hesitancy_reason_allergic_5bc <- coalesce(df$v_hesitancy_reason_allergic_b, df$v_hesitancy_reason_allergic_c)
-  df$v_hesitancy_reason_ineffective_5bc <- coalesce(df$v_hesitancy_reason_ineffective_b, df$v_hesitancy_reason_ineffective_c)
-  df$v_hesitancy_reason_unnecessary_5bc <- coalesce(df$v_hesitancy_reason_unnecessary_b, df$v_hesitancy_reason_unnecessary_c)
-  df$v_hesitancy_reason_dislike_vaccines_5bc <- coalesce(df$v_hesitancy_reason_dislike_vaccines_b, df$v_hesitancy_reason_dislike_vaccines_c)
-  df$v_hesitancy_reason_not_recommended_5bc <- coalesce(df$v_hesitancy_reason_not_recommended_b, df$v_hesitancy_reason_not_recommended_c)
-  df$v_hesitancy_reason_wait_safety_5bc <- coalesce(df$v_hesitancy_reason_wait_safety_b, df$v_hesitancy_reason_wait_safety_c)
-  df$v_hesitancy_reason_low_priority_5bc <- coalesce(df$v_hesitancy_reason_low_priority_b, df$v_hesitancy_reason_low_priority_c)
-  df$v_hesitancy_reason_cost_5bc <- coalesce(df$v_hesitancy_reason_cost_b, df$v_hesitancy_reason_cost_c)
-  df$v_hesitancy_reason_distrust_vaccines_5bc <- coalesce(df$v_hesitancy_reason_distrust_vaccines_b, df$v_hesitancy_reason_distrust_vaccines_c)
-  df$v_hesitancy_reason_distrust_gov_5bc <- coalesce(df$v_hesitancy_reason_distrust_gov_b, df$v_hesitancy_reason_distrust_gov_c)
-  df$v_hesitancy_reason_health_condition_5bc <- coalesce(df$v_hesitancy_reason_health_condition_b, df$v_hesitancy_reason_health_condition_c)
-  df$v_hesitancy_reason_other_5bc <- coalesce(df$v_hesitancy_reason_other_b, df$v_hesitancy_reason_other_c)
-  df$v_hesitancy_reason_pregnant_5bc <- coalesce(df$v_hesitancy_reason_pregnant_b, df$v_hesitancy_reason_pregnant_c)
-  df$v_hesitancy_reason_religious_5bc <- coalesce(df$v_hesitancy_reason_religious_b, df$v_hesitancy_reason_religious_c)
-  
-  
-  if ("V6" %in% names(df)) {
-    dontneed_reasons <- split_options(df$V6)
-    
-    df$v_dontneed_reason_alreadyhad <- is_selected(dontneed_reasons, "1")
-    df$v_dontneed_reason_dontspendtime <- is_selected(dontneed_reasons, "2")
-    df$v_dontneed_reason_nothighrisk <- is_selected(dontneed_reasons, "3")
-    df$v_dontneed_reason_precautions <- is_selected(dontneed_reasons, "4")
-    df$v_dontneed_reason_notserious <- is_selected(dontneed_reasons, "5")
-    df$v_dontneed_reason_notbeneficial <- is_selected(dontneed_reasons, "7")
-    df$v_dontneed_reason_other <- is_selected(dontneed_reasons, "8")
-    
-  } else {
-    df$v_dontneed_reason_alreadyhad <- NA
-    df$v_dontneed_reason_dontspendtime <- NA
-    df$v_dontneed_reason_nothighrisk <- NA
-    df$v_dontneed_reason_precautions <- NA
-    df$v_dontneed_reason_notserious <- NA
-    df$v_dontneed_reason_notbeneficial <- NA
-    df$v_dontneed_reason_other <- NA
-  }
-  
-  df$v_dontneed_reason_alreadyhad[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
-  df$v_dontneed_reason_dontspendtime[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
-  df$v_dontneed_reason_nothighrisk[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
-  df$v_dontneed_reason_precautions[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
-  df$v_dontneed_reason_notserious[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
-  df$v_dontneed_reason_notbeneficial[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
-  df$v_dontneed_reason_other[is.na(df$v_hesitancy_reason_unnecessary_5bc)] <- NA
-  
-  
-  df$mc_vaccinated_acceptance <- case_when(
-    df$v_covid_vaccinated == 1 ~ "vaccinated",
-    df$v_covid_vaccinated == 0 & df$b_accept_cov_vaccine == 1 ~ "not vaccinated and accepting",
-    df$v_covid_vaccinated == 0 & df$b_accept_cov_vaccine == 0 ~ "not vaccinated and hesitant",
-    df$v_covid_vaccinated == 0 & is.na(df$b_accept_cov_vaccine) == TRUE ~ "not vaccinated and did not indicate hesitance level"
-  )
-  
-  df$b_vaccinated <- df$mc_vaccinated_acceptance == "vaccinated"
-  df$b_not_vaccinated_and_accepting <- df$mc_vaccinated_acceptance == "not vaccinated and accepting"
-  df$b_not_vaccinated_and_hesitant <- df$mc_vaccinated_acceptance == "not vaccinated and hesitant"
-  df$b_not_vaccinated_and_did_not_indicate_hesitance_level <- df$mc_vaccinated_acceptance == "not vaccinated and did not indicate hesitance level"
-  
-  
-  if ("ms_symptoms" %in% names(df)) {
-    df$individ_fever <- (df$ms_symptoms == 1L)
-    df$individ_sore_throat <- (df$ms_symptoms == 9L)
-    df$individ_cough <- (df$ms_symptoms == 2L)
-    df$individ_short_breath <- (df$ms_symptoms == 3L)
-    df$individ_diff_breath <- (df$ms_symptoms == 4L)
-    df$individ_anosmia <- (df$ms_symptoms == 13L)
-    
-    df$individ_cli <- df$individ_fever & (
-      df$individ_cough | df$individ_short_breath | df$individ_diff_breath
-    )
-    df$individ_ili <- df$individ_fever & (df$individ_sore_throat | df$individ_cough)
-    
-  } else {
-    df$individ_cli <- NA
-    df$individ_ili <- NA
-  }
-  
-  
-  if ("mc_concerned_sideeffects" %in% names(df)) {	
-    df$b_concerned_sideeffects <- as.numeric(	
-      df$mc_concerned_sideeffects == 1 | df$mc_concerned_sideeffects == 2	
-    )	
-  } else {	
-    df$b_concerned_sideeffects <- NA_real_	
-  }
-
-  df$b_hesitant_sideeffects <- case_when(
-    df$b_hesitant_cov_vaccine == 1 & df$b_concerned_sideeffects == 1 ~ 1,
-    df$b_hesitant_cov_vaccine == 1 & df$b_concerned_sideeffects == 0 ~ 0,
-    TRUE ~ NA_real_
-  )
-  
-  if ( "b_vaccine_likely_friends" %in% names(df) &
-       "b_vaccine_likely_local_health" %in% names(df) &
-       "b_vaccine_likely_who" %in% names(df) &
-       "b_vaccine_likely_govt_health" %in% names(df) &
-       "b_vaccine_likely_politicians" %in% names(df) &
-       "b_vaccine_likely_doctors" %in% names(df) ) {
-    df$b_hesitant_trust_fam <- case_when(
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_friends == 1 ~ 1,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_friends == 0 ~ 0,
-      TRUE ~ NA_real_
-    )
-    df$b_hesitant_trust_healthcare <- case_when(
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_local_health == 1 ~ 1,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_local_health == 0 ~ 0,
-      TRUE ~ NA_real_
-    )
-    df$b_hesitant_trust_who <- case_when(
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_who == 1 ~ 1,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_who == 0 ~ 0,
-      TRUE ~ NA_real_
-    )
-    df$b_hesitant_trust_govt <- case_when(
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_govt_health == 1 ~ 1,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_govt_health == 0 ~ 0,
-      TRUE ~ NA_real_
-    )
-    df$b_hesitant_trust_politicians <- case_when(
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_politicians == 1 ~ 1,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_politicians == 0 ~ 0,
-      TRUE ~ NA_real_
-    )
-    df$b_hesitant_trust_doctors <- case_when(
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_doctors == 1 ~ 1,
-      df$b_hesitant_cov_vaccine == 1 & df$b_vaccine_likely_doctors == 0 ~ 0,
-      TRUE ~ NA_real_
-    )
-    
-  } else {
-    df$b_hesitant_trust_fam <- NA_real_
-    df$b_hesitant_trust_healthcare <- NA_real_
-    df$b_hesitant_trust_who <- NA_real_
-    df$b_hesitant_trust_govt <- NA_real_
-    df$b_hesitant_trust_politicians <- NA_real_
+    df$mc_age3 <- NA_character_
   }
   
   if ( "b_hispanic" %in% names(df) &
        "mc_race" %in% names(df) ) {
-    df$mc_race_ethnicity <- case_when(
+    df$mc_hispeth <- case_when(
       df$b_hispanic == 1 ~ "Hispanic",
-      df$b_hispanic == 2 & df$mc_race == "American Indian or Alaska Native" ~ "Non-Hispanic American Indian or Alaska Native",
-      df$b_hispanic == 2 & df$mc_race == "Asian" ~ "Non-Hispanic Asian",
-      df$b_hispanic == 2 & df$mc_race == "Black or African American" ~ "Non-Hispanic Black or African American",
-      df$b_hispanic == 2 & df$mc_race == "Native Hawaiian or Pacific Islander" ~ "Non-Hispanic Native Hawaiian or Pacific Islander",
+      df$b_hispanic == 2 & df$mc_race == "American Indian or Alaska Native" ~ "Non-Hispanic Other",
+      df$b_hispanic == 2 & df$mc_race == "Asian" ~ "Non-Hispanic Other",
+      df$b_hispanic == 2 & df$mc_race == "Black or African American" ~ "Non-Hispanic Other",
+      df$b_hispanic == 2 & df$mc_race == "Native Hawaiian or Pacific Islander" ~ "Non-Hispanic Other",
       df$b_hispanic == 2 & df$mc_race == "White" ~ "Non-Hispanic White",
-      df$b_hispanic == 2 & df$mc_race == "Other" ~ "Non-Hispanic other or multiracial",
+      df$b_hispanic == 2 & df$mc_race == "Other" ~ "Non-Hispanic Other",
       TRUE ~ NA_character_
     )
   } else {
-    df$mc_race_ethnicity <- NA_character_
+    df$mc_hispeth <- NA_character_
   }
-
+  
   return(df)
 }
 
