@@ -36,26 +36,26 @@ ANTIJOIN:="antijoin.cids.sorted.txt"
 CIDS_DEST:="fb-interchange/cmu_respondent_ids"
 INDIVID_DEST:="fb-public-results/"
 RAW_DEST:="raw"
-CONTINGENCY_DEST:="delphi-web/surveys"
+CONTINGENCY_DEST:=delphi-web/surveys
 
 default:
 	@echo No default implemented yet
 
-tidy: receiving
-	rm -rf tidy
-	mkdir -p tidy tidy/$(RECEIVING) tidy/$(INDIVIDUAL)
-	cp params.json tidy/
-	mv $(RECEIVING)/*.csv tidy/$(RECEIVING)
-	mv $(INDIVIDUAL)/*.csv* tidy/$(INDIVIDUAL)
-	tar -czf tidy-`date +"%Y-%m-%d-%H%M%S"`.tgz tidy
+tidy: $(RECEIVING)
+	rm -rf $@
+	mkdir -p $@/$(RECEIVING) $@/$(INDIVIDUAL)
+	cp params.json $@
+	mv $(RECEIVING)/*.csv $@/$(RECEIVING)
+	mv $(INDIVIDUAL)/*.csv* $@/$(INDIVIDUAL)
+	tar -czf tidy-`date +"%Y-%m-%d-%H%M%S"`.tgz $@
 
-tidy-%-contingency: contingency_receiving
-	rm -rf tidy-$*
-	mkdir -p tidy-$* tidy-$*/$(CONTINGENCY_RECEIVING)
-	cp params.json tidy-$*/
-	mv contingency_input.txt tidy-$*/
-	mv $(CONTINGENCY_RECEIVING)/*.csv tidy-$*/$(CONTINGENCY_RECEIVING)
-	tar -czf tidy-$*-`date +"%Y-%m-%d-%H%M%S"`.tgz tidy-$*
+tidy-%-contingency: $(CONTINGENCY_RECEIVING) post-%-contingency
+	rm -rf $@
+	mkdir -p $@/$(CONTINGENCY_RECEIVING)
+	cp params.json $@
+	cp contingency_input.txt $@
+	cp $(CONTINGENCY_RECEIVING)/*.csv $@/$(CONTINGENCY_RECEIVING)
+	tar -czf tidy-$*-`date +"%Y-%m-%d-%H%M%S"`.tgz $@
 
 clean:
 	rm -f $(RECEIVING)/*.csv $(INDIVIDUAL)/*.csv $(CIDS)/*.csv $(CONTINGENCY_RECEIVING)/*.csv
@@ -73,8 +73,8 @@ install-R: dev
 
 install: install-python install-R
 
-$(CIDS):
-	[ -f $(CIDS) ] || mkdir -p $(CIDS)
+$(CIDS) $(CONTINGENCY_RECEIVING):
+	[ -f $@ ] || mkdir -p $@
 
 init-qualtrics:
 	grep '"token": "..*"' params.json
@@ -148,10 +148,12 @@ pipeline: init-qualtrics params.json $(WEIGHTS) run-R post-cids post-individual 
 	touch $@
 	echo "SUCCESS: $(DRY_MESSAGE)pipeline complete" >> $(MESSAGES)
 
-run-contingency:
+run-%-contingency: $(CONTINGENCY_RECEIVING) 
 	time Rscript contingency_tables.R
 
-%-contingency-pipeline: %-contingency-params $(WEIGHTS) run-contingency post-%-contingency tidy-%-contingency
+%-contingency-pipeline: %-contingency-params run-%-contingency post-%-contingency tidy-%-contingency
+	rm contingency_input.txt
+	rm $(CONTINGENCY_RECEIVING)/*.csv
 	touch $@
 	echo "SUCCESS: $(DRY_MESSAGE)$* contingency pipeline complete" >> $(MESSAGES)
 
@@ -215,7 +217,7 @@ post-%-contingency:
 	[ -n "$${POST}" ]; \
 	BATCH=""; \
 	for f in $${POST}; do \
-	    BATCH="$${BATCH}put $$f ${CONTINGENCY_DEST}/$*\n"; \
+	    BATCH="$${BATCH}put $$f \"${CONTINGENCY_DEST}/$*\"\n"; \
 	done; \
 	$(CONTINGENCY_SFTP_POST); \
 	echo "SUCCESS: $(DRY_MESSAGE)Posted `echo $${POST} | wc -w` $* contingency tables" >> $(MESSAGES)
@@ -223,3 +225,6 @@ post-%-contingency:
 
 validate-covidcast:
 	@echo validate-covidcast not yet implemented
+
+CONTINGENCY_TOUCH:=X-contingency-params run-X-contingency tidy-X-contingency
+.PRECIOUS: $(subst X,weekly,$(CONTINGENCY_TOUCH)) $(subst X,monthly,$(CONTINGENCY_TOUCH))
