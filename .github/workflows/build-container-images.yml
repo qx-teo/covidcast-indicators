@@ -23,13 +23,13 @@ jobs:
 
       - name: Build, tag, and push image to Github
         env:
-          INDICATOR_DOCKER_FILE: ./${{ matrix.packages }}/Dockerfile # add matrix thingy here
+          INDICATOR_DOCKER_FILE: ./${{ matrix.packages }}/Dockerfile
         run: |
           baseRef="${GITHUB_REF#*/}"
           baseRef="${baseRef#*/}"
           case "${baseRef}" in
           main)
-            imageTag="latest"
+            imageTag="dev"
             ;;
           *)
             imageTag="${baseRef//\//_}" # replace `/` with `_` in branch name
