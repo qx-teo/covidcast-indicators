@@ -35,6 +35,7 @@ jobs:
             imageTag="${baseRef//\//_}" # replace `/` with `_` in branch name
             ;;
           esac
+          cd ${{ matrix.packages }}
           echo "using tag: --${imageTag}--"
           docker build -t ghcr.io/${{ github.repository }}:$imageTag --file ${INDICATOR_DOCKER_FILE} .
           docker push ghcr.io/${{ github.repository }}:$imageTag
